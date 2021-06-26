@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-third: #99E2D0;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+$breakpoints:(
+    tablette:900px
+);
+$breakpoints:(
+    mobile: 599px
+);
+
+@mixin mobile-only{
+    @media screen and (max-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+.proj-layout{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 100%;
+        @include mobile-only{
+            grid-template-columns: 1fr;
+        }
+}

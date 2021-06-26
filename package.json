@@ -1,0 +1,19 @@
+{
+  "name": "nazihaabdellaoui_3_25062021",
+  "version": "1.0.0",
+  "description": "ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./sass/main.scss:./css/style_ohmyfood.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Myosotis-cloud/NazihaAbdellaoui_3_25062021.git"
+  },
+  "author": "N.Abdellaoui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Myosotis-cloud/NazihaAbdellaoui_3_25062021/issues"
+  },
+  "homepage": "https://github.com/Myosotis-cloud/NazihaAbdellaoui_3_25062021#readme"
+}
