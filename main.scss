@@ -13,7 +13,8 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
-    padding: 1%;
+    padding: 0;
+    margin: auto;
 }
 
 * {
@@ -41,13 +42,20 @@ $breakpoints:(
             grid-template-columns: 1fr;
         }
 }
+
+/* ******header ******* */
 .header{
 display: flex;
 justify-content: center;
-line-height: 80px;
-height: 80px;
+line-height: 60px;
+height: 50px;
 width: 100%;
+    a img{
+    width: 150px;
+    }
 }
+/* *************header ********* */
+
 
 .welcome_img{
 object-position: center;
@@ -66,7 +74,7 @@ border-radius: 20px 20px 0 0;
     box-shadow: $size $size;
     background-color: $colour;
 }
-
+/* ****************bouton*********** */
 %typography{
     font-family: 'Roboto',sans-serif;
     color: #fff;
@@ -81,17 +89,19 @@ border-radius: 20px 20px 0 0;
     border:none;
 }
 .btn{
-    @extend %typography; 
-}
-.btn-explorer{
-    padding-top: 4%;
+    @extend %typography;
+    &:hover{
+        background-color: adjust-hue($color: $color-secondary, $degrees: 80%)
+    }
 }
         @each $colour, $hex in $colours{
             .btn--#{$colour}{
                 background-color: $hex;
             }
         }
+/* *************fin bouton******* */
 
+/* *****footer******* */
 .nav-footer h1{
     display: block;
     justify-content: flex-start;
@@ -108,48 +118,65 @@ border-radius: 20px 20px 0 0;
         display: flex;
         }
     }
+/* ******* fin footer ******* */
+
 
 .introduction{
     font-family: 'Roboto',sans-serif;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    text-align: center;
     flex-direction: column;
-    > h1{
-        font-size: 1rem;
-        flex-wrap: wrap;
-    }        
-}
-
-.introduction p{
-font-size: 0.8rem;
-margin: 0;
-line-height: normal;
-}
-    .barre_search{
-        display: flex;
-        justify-content: center;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+    @include mobile-only;
+        > .input-container{
+        position: relative;
+        font-family: 'Roboto',sans-serif;
+        width: 100%;
         text-align: center;
-        align-items: center;
-            > input{
-                line-height: 40px;
-                height: 40px;
-                border: none;
-                background-color: grey;
-                > input--active{
-                    color: black;
-                    opacity: 1;
-                }
-            }
+                > .input_icon{
+                    position: absolute;
+                    width: 80%;
+                }            
+        }
+}
+
+.btn-explorer{
+padding-top: 20px;
+}
+
+input{
+line-height: 40px;
+height: 40px;
+border: none;
+width: 100%;
+background-color: hsl(0, 0%, 82.7%);
+}
+
+input::placeholder{
+    text-align: center;
+    color: black;
+    opacity: 1;
+    font-family: 'roboto',sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+.head-titles{
+    font-family: 'roboto',sans-serif;
+    display: block;
+    text-align: center;
+    line-height: normal;
+    > h1{
+        font-size: 1.3rem;
+        font-weight: 900;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        + h4{
+            font-size: 1rem;
+            font-weight: 100;
+            margin: 0;
+        }
     }
-
-
-
-
-
-
-
-
-
-
+}
