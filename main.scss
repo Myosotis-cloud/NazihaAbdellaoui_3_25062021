@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-third: #99E2D0;
+$colours:(
+mauve: #9356DC,
+pink: hsl(316.6, 100%, 73.8%),
+freshmint: #99E2D0,
+);
 
+$color-secondary:#FF79DA;
+$btn-shadow-size: 0.6rem 0.6rem 0.6rem;
 html, body {
     height: 100%;
+    width: 100%;
     margin: 0;
-    padding: 0;
-  }
+    padding: 1%;
+}
 
 * {
     box-sizing: border-box;
@@ -36,3 +41,115 @@ $breakpoints:(
             grid-template-columns: 1fr;
         }
 }
+.header{
+display: flex;
+justify-content: center;
+line-height: 80px;
+height: 80px;
+width: 100%;
+}
+
+.welcome_img{
+object-position: center;
+object-fit: cover;
+width: 100%;
+height: 150px;
+border-radius: 20px 20px 0 0;
+}
+
+@mixin btn-font($colour:$color-secondary,$size:$btn-shadow-size) {
+    @if (lightness($colour)< 80%) {
+        $colour: lighten ($colour, 20%);
+    }@else{
+        $colour: darken ($colour, 10%);
+    }
+    box-shadow: $size $size;
+    background-color: $colour;
+}
+
+%typography{
+    font-family: 'Roboto',sans-serif;
+    color: #fff;
+    background-color: $color-secondary;
+    font-size: 0.8rem;
+    box-shadow: $btn-shadow-size;
+    font-weight: 400;
+    border-radius: 20px 20px 20px 20px;
+    width: 250px;
+    line-height: 40px;
+    height: 40px;
+    border:none;
+}
+.btn{
+    @extend %typography; 
+}
+.btn-explorer{
+    padding-top: 4%;
+}
+        @each $colour, $hex in $colours{
+            .btn--#{$colour}{
+                background-color: $hex;
+            }
+        }
+
+.nav-footer h1{
+    display: block;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-family: 'Shrikhand',sans-serif;
+    font-size: 1rem;
+}
+    .footer-list{
+    font-family: 'roboto',sans-serif;
+    list-style-type: none;
+    margin: 0;
+    text-align: left;
+        >li{
+        display: flex;
+        }
+    }
+
+.introduction{
+    font-family: 'Roboto',sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    > h1{
+        font-size: 1rem;
+        flex-wrap: wrap;
+    }        
+}
+
+.introduction p{
+font-size: 0.8rem;
+margin: 0;
+line-height: normal;
+}
+    .barre_search{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+            > input{
+                line-height: 40px;
+                height: 40px;
+                border: none;
+                background-color: grey;
+                > input--active{
+                    color: black;
+                    opacity: 1;
+                }
+            }
+    }
+
+
+
+
+
+
+
+
+
+
