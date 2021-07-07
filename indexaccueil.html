@@ -12,7 +12,6 @@
 
         <meta property="og:title" content="ohmyfood"/>
         <meta property="og:type" content="Restauration"/>
-        <meta property="og:url" content="http://www.example.com/"/>
         <meta property="og:image" content="images/logo/ohmyfood.svg"/>
         <meta property="og:description" content="Reservations menus gastronomiques"/>
 
@@ -31,35 +30,33 @@
                 <input type="search" name="search" placeholder="Paris,Belleville" required>
             </div>
             <div class="head-titles">
-                <h1>Réserver le menu<br>
-                qui vous convient</h1>
-                <h4>Découvrez des restaurants d'exception,<br>
-                    sélectionnés par nos soins.</h4>
+                <h1>Réserver le menu qui vous convient</h1>
+                <h4>Découvrez des restaurants d'exception, sélectionnés par nos soins.</h4>
             </div>
             <div class="btn-explorer">
                 <a href="#restaurant_cards" alt="bouton">
-                    <button type="button" class="btn">Explorer nos restaurants</button>
+                    <button type="button" class="btn btn-lightness">Explorer nos restaurants</button>
                 </a><br/>
             </div>
         </section>
 
         <nav class="nav_main">
             <h2>Fonctionnement</h2>
-            <div class="nav_1">
+            <div class="nav__heading">
                 <span class="nav_number">1</span>
                 <i class="fas fa-mobile-alt nav_custom_icon"></i>
                 <h3 class="title_nav">Choisissez un restaurant</h3>
             </div>
             
-            <div class="nav_2">
+            <div class="nav__heading">
                 <span class="nav_number">2</span>
-                <i class="fas fa-list-ul custom_icon"></i>
+                <i class="fas fa-list-ul nav_custom_icon"></i>
                 <h3 class="title_nav">Composez votre menu</h3>
             </div>
 
-            <div class="nav_3">
+            <div class="nav__heading">
                 <span class="nav_number">3</span>
-                <i class="fas fa-store custom_icon"></i>
+                <i class="fas fa-store nav_custom_icon"></i>
                 <h3 class="title_nav">Dégustez au restaurant</h3>
             </div>
 
@@ -99,22 +96,12 @@
 
         <footer class="nav-footer">
             <h1>ohmyfood</h1>
-            <ul class="footer-list">
-                <li>
-                    <i class="fas fa-utensils "></i>
-                    <span>Proposer un restaurant</span>
-                </li>
-                <li>
-                    <i class="far fa-handshake"></i>
-                    <span>Devenir partenaire</span>                    
-                </li>
-                <li>
-                    Mention légales
-                </li>
-            
-            <a href="mailto:nboussem81@outlook.fr"><li>Contact</li></a>
-            </ul>
-
+            <div class="footer-list">
+                <a href="#"><i class="fas fa-utensils i-ustensils"></i><span class="txt-foot">Proposer un restaurant</span></a>
+                <a href="#"><i class="fas fa-handshake i-hands"></i><span class="txt-foot">Devenir partenaire</span></a>
+                <a href="#">Mention légales</a>          
+                <a href="mailto:nboussem81@outlook.fr">Contact</a>
+            </div>
         </footer>
     </div>
 </body>
