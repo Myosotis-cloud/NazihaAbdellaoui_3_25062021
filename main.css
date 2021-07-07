@@ -4,6 +4,7 @@ body {
   width: 100%;
   padding: 2%;
   margin: auto;
+  margin: 0;
 }
 
 * {
@@ -299,6 +300,7 @@ input::placeholder {
           box-sizing: border-box;
   border: solid 1px black;
   margin: 20px;
+  position: relative;
 }
 
 #restaurant_cards > .__card h3 {
@@ -363,8 +365,8 @@ label {
           align-items: center;
   height: 35px;
   font-weight: 500;
-  position: relative;
-  bottom: 9em;
-  left: 90%;
+  position: absolute;
+  bottom: 11em;
+  right: 1em;
 }
 /*# sourceMappingURL=main.css.map */
