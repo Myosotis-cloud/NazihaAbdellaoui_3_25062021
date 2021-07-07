@@ -46,16 +46,6 @@ body {
 }
 
 /* *************header ********* */
-.welcome_img {
-  -o-object-position: center;
-  object-position: center;
-  -o-object-fit: cover;
-  object-fit: cover;
-  width: 100%;
-  height: 150px;
-  border-radius: 20px 20px 0 0;
-}
-
 /* ****************bouton*********** */
 .btn {
   font-family: "Roboto", sans-serif;
@@ -173,7 +163,8 @@ i.ustensils {
 
 .introduction > .input-container > .input_icon {
   position: absolute;
-  width: 80%;
+  width: 90%;
+  top: 2%;
 }
 
 .btn-explorer {
@@ -187,6 +178,7 @@ input {
   border: none;
   width: 100%;
   background-color: lightgray;
+  display: inline-block;
 }
 
 input::-webkit-input-placeholder {
@@ -286,11 +278,93 @@ input::placeholder {
 .nav_main > .nav__heading .nav_number + .nav_custom_icon {
   color: darkgray;
   font-size: 1.3rem;
-  margin-right: 20px;
-  margin-left: 5px;
+  margin-right: 30px;
 }
 
 .nav_main > .nav__heading .nav_number + .nav_custom_icon + .title_nav {
   font-size: 1em;
+}
+
+#restaurant_cards {
+  width: 100%;
+  font-family: 'Roboto',sans-serif;
+}
+
+#restaurant_cards > .__card {
+  display: block;
+  text-decoration: none;
+  color: black;
+  border-radius: 20px 20px 20px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 1px black;
+  margin: 20px;
+}
+
+#restaurant_cards > .__card h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.description_card {
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+  margin: 0;
+}
+
+.description_card, .heart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.i-heart {
+  font-size: 2rem;
+  color: grey;
+}
+
+.i-heart:hover {
+  color: blueviolet;
+}
+
+.welcome_img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  border-radius: 20px 20px 0 0;
+}
+
+label {
+  background-color: #99E2D0;
+  width: 100px;
+  color: #1a6653;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 35px;
+  font-weight: 500;
+  position: relative;
+  bottom: 9em;
+  left: 90%;
 }
 /*# sourceMappingURL=main.css.map */
