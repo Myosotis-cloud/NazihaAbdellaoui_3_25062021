@@ -2,8 +2,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  padding: 2%;
-  margin: auto;
+  padding: 0;
   margin: 0;
 }
 
@@ -20,12 +19,14 @@ body {
           justify-content: center;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
+  margin: auto;
 }
 
 @media screen and (max-width: 599px) {
   .proj-layout {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    margin: auto;
   }
 }
 
@@ -38,12 +39,44 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   line-height: 60px;
-  height: 50px;
+  height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 100%;
 }
 
 .header a img {
+  width: 160px;
+}
+
+.header--menu {
+  border: 1px solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header--menu > .logo-nav img {
   width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header--menu > .logo-nav img + .fleche_menu {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
 }
 
 /* *************header ********* */
@@ -76,6 +109,7 @@ body {
 /* *************fin bouton********* */
 /* ************footer************* */
 .nav-footer {
+  position: relative;
   margin: 0;
   background-color: #3f3c3c;
   color: white;
@@ -86,6 +120,7 @@ body {
 
 .nav-footer h1 {
   font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
   font-size: 1.2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -117,9 +152,8 @@ body {
 }
 
 .footer-list a span {
-  position: relative;
-  left: 0.7rem;
-  text-align: justify;
+  position: absolute;
+  margin-left: 15px;
 }
 
 .i-foot, .txt-foot {
@@ -166,6 +200,28 @@ i.ustensils {
   position: absolute;
   width: 90%;
   top: 2%;
+}
+
+.introduction > .input-container > .input_icon > .head-titles {
+  font-family: "roboto", sans-serif;
+  display: block;
+  text-align: center;
+  line-height: normal;
+}
+
+.introduction > .input-container > .input_icon > .head-titles .title_main {
+  font-family: 'Roboto',sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.introduction > .input-container > .input_icon > .head-titles .title_main + h4 {
+  font-size: 1rem;
+  font-weight: 100;
+  margin: 0;
 }
 
 .btn-explorer {
@@ -218,25 +274,9 @@ input::placeholder {
   font-size: 0.8rem;
 }
 
-.head-titles {
-  font-family: "roboto", sans-serif;
-  display: block;
-  text-align: center;
-  line-height: normal;
-}
-
-.head-titles > h1 {
-  font-size: 1.3rem;
-  font-weight: 900;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-.head-titles > h1 + h4 {
-  font-size: 1rem;
-  font-weight: 100;
-  margin: 0;
+.nav_main {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .nav_main > .nav__heading {
@@ -291,22 +331,28 @@ input::placeholder {
   font-family: 'Roboto',sans-serif;
 }
 
-#restaurant_cards > .__card {
+#restaurant_cards .__card {
   display: block;
   text-decoration: none;
   color: black;
   border-radius: 20px 20px 20px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: solid 1px black;
+  -webkit-box-shadow: 1px 1px 0 0 darkgray;
+          box-shadow: 1px 1px 0 0 darkgray;
   margin: 20px;
   position: relative;
 }
 
-#restaurant_cards > .__card h3 {
+#restaurant_cards .__card .title_nav {
   font-size: 1.2rem;
   font-weight: 900;
   margin: 0;
+}
+
+#restaurant_cards .__card .title_nav + .pargph {
+  font-weight: 300;
+  font-size: 1rem;
 }
 
 p {
@@ -321,7 +367,7 @@ p {
   margin: 0;
 }
 
-.description_card, .heart {
+.description_card, .i-heart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -368,5 +414,10 @@ label {
   position: absolute;
   bottom: 11em;
   right: 1em;
+}
+
+/* *****************PAGE MENU LA NOTE ENCHANTEE********************************************** */
+.menu_main {
+  font-family: 'Roboto',sans-serif;
 }
 /*# sourceMappingURL=main.css.map */

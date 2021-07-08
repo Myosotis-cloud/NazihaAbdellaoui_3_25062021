@@ -4,14 +4,27 @@ $color-secondary: #ff79da;
 $color-secondary-lighting : #ff79d9c4;
 $color-third: #99E2D0;
 $color-darken:#1a6653;
+$shadow: #f2f2f2;
 $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
+
+@mixin h1 {
+  font-family: 'Roboto',sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+@mixin subtitle-h2-menu {
+  font-family: 'Roboto',sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
 
   html,
   body {
     height: 100%;
     width: 100%;
-    padding: 2%;
-    margin: auto;
+    padding: 0;
     margin: 0;
   }
   
@@ -35,24 +48,52 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
     display: grid;
     justify-content: center;
     grid-template-columns: 100%;
+    margin: auto;
     @include mobile-only {
       grid-template-columns: 1fr;
+      margin: auto;
     }
   }
   
   /* ******header ******* */
-  .header {
+@mixin heading {
+  display: flex;
+  justify-content: center;
+  line-height: 60px;
+  height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
 
-    display: flex;
-    justify-content: center;
-    line-height: 60px;
-    height: 50px;
-    width: 100%;
-    @include mobile-only;
+.header {
+  @include heading;
     a img {
-      width: 150px;
+      width: 160px;
     }
+}
+
+.header--menu{
+  border: 1px solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  > .logo-nav{
+      img{
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        + .fleche_menu{
+          justify-content: flex-start;
+          width: 100%;
+        }
+      }
   }
+}
+
+
   /* *************header ********* */
   /* ****************bouton*********** */
   %typography {
@@ -79,6 +120,7 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   /* *************fin bouton********* */
   /* ************footer************* */
   .nav-footer{
+    position: relative;
     margin: 0;
     background-color: rgb(63, 60, 60);
     color: white;
@@ -87,6 +129,7 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
     display: block;
     h1 {
     font-family: "Shrikhand", sans-serif;
+    font-weight: 500;
     font-size: 1.2rem;
     flex-direction: column;
     }
@@ -104,16 +147,15 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
       color: white;
       flex-direction: column;
       & span{
-        position: relative;
-        left: 0.7rem;
-        text-align: justify;
+        position: absolute;
+        margin-left: 15px;
       }
     }
   }
 
-  .i-foot, .txt-foot{
-    display: inline-flex;
-  }
+.i-foot, .txt-foot{
+display: inline-flex;
+}
 
 .i-hands{
 transform: perspective(150px) rotateZ(125deg);
@@ -144,6 +186,20 @@ i.ustensils{
         position: absolute;
         width: 90%;
         top: 2%;
+        > .head-titles {
+          font-family: "roboto", sans-serif;
+          display: block;
+          text-align: center;
+          line-height: normal;
+          .title_main {
+            @include h1;
+            + h4 {
+              font-size: 1rem;
+              font-weight: 100;
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }
@@ -206,25 +262,10 @@ i.ustensils{
     font-weight: 500;
     font-size: 0.8rem;
   }
-  .head-titles {
-    font-family: "roboto", sans-serif;
-    display: block;
-    text-align: center;
-    line-height: normal;
-    > h1 {
-      font-size: 1.3rem;
-      font-weight: 900;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-      + h4 {
-        font-size: 1rem;
-        font-weight: 100;
-        margin: 0;
-      }
-    }
-  }
   
   .nav_main{
+    padding-left: 5%;
+    padding-right: 5%;
     > .nav__heading{
       width: 100%;
       display: inline-flex;
@@ -265,22 +306,25 @@ i.ustensils{
 #restaurant_cards{
 width: 100%;
 font-family: 'Roboto',sans-serif;
-@include mobile-only;
-    > .__card{
-      display: block;
-      text-decoration: none;
-      color: black;
-      border-radius: 20px 20px 20px 20px;
-      box-sizing: border-box;
-      border: solid 1px black;
-      margin: 20px;
-      position:relative;
-        h3{
-          font-size: 1.2rem;
-          font-weight: 900;
-          margin: 0;
-        }
+  .__card{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 0 0 darkgray;
+    margin: 20px;
+    position:relative;
+    .title_nav{
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin: 0;
+      + .pargph{
+        font-weight: 300;
+        font-size: 1rem;
+      }
     }
+  }
 }
 
 p{
@@ -293,7 +337,7 @@ padding-top: 10px;
 padding-right: 20px;
 margin: 0;
 }
-.description_card, .heart{
+.description_card, .i-heart{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -326,4 +370,10 @@ label{
   position: absolute;
   bottom: 11em;
   right: 1em;
+}
+
+/* *****************PAGE MENU LA NOTE ENCHANTEE********************************************** */
+.menu_main{
+  font-family: 'Roboto',sans-serif;
+
 }
