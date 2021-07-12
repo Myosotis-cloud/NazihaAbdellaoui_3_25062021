@@ -63,7 +63,6 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   height: 60px;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100%;
 }
 
 .header {
@@ -73,24 +72,28 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
     }
 }
 
-.header--menu{
+.header--menu a{
   border: 1px solid;
-  padding-top: 20px;
-  padding-bottom: 20px;
   width: 100%;
   display: flex;
-  justify-content: center;
-  > .logo-nav{
+  align-items: center;
+  text-decoration: none;
+  line-height: 60px;
+  height: 60px;
+    .logo{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
       img{
-        width: 150px;
-        display: flex;
-        justify-content: center;
-        + .fleche_menu{
-          justify-content: flex-start;
-          width: 100%;
-        }
+        height: 40px;
       }
-  }
+    }
+}
+i.fleche_menu{
+  font-size: 1.5rem;
+  padding-left: 25px;
+  color: rgb(63, 60, 60);
 }
 
 
@@ -375,5 +378,11 @@ label{
 /* *****************PAGE MENU LA NOTE ENCHANTEE********************************************** */
 .menu_main{
   font-family: 'Roboto',sans-serif;
-
+}
+.introduction-menu{
+  & img{
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+  }
 }
