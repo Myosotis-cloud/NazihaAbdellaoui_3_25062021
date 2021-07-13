@@ -4,7 +4,7 @@ $color-secondary: #ff79da;
 $color-secondary-lighting : #ff79d9c4;
 $color-third: #99E2D0;
 $color-darken:#1a6653;
-$shadow: #f2f2f2;
+$bgc: #f2f2f2;
 $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
 
 @mixin h1 {
@@ -15,10 +15,15 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   margin-bottom: 15px;
 }
 @mixin subtitle-h2-menu {
+  width: 8%;
   font-family: 'Roboto',sans-serif;
-  font-size: 1.5rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  border-bottom: 3px solid $color-third;
+  padding-bottom: 5px;
   text-transform: uppercase;
 }
+
 
   html,
   body {
@@ -73,13 +78,13 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
 }
 
 .header--menu a{
-  border: 1px solid;
   width: 100%;
   display: flex;
   align-items: center;
   text-decoration: none;
   line-height: 60px;
   height: 60px;
+  background-color:$bgc;
     .logo{
       display: flex;
       justify-content: center;
@@ -277,7 +282,7 @@ i.ustensils{
       border-radius: 20px;
       box-shadow: 1px 1px 0px 0px rgb(78.4%, 77.1%, 77.1%);
       font-family: 'roboto',sans-serif;
-      background-color: #f2f2f2;
+      background-color: $bgc;
       margin: .5rem;
       padding: .5rem;
       &:hover{
@@ -375,10 +380,59 @@ label{
   right: 1em;
 }
 
+
 /* *****************PAGE MENU LA NOTE ENCHANTEE********************************************** */
 .menu_main{
-  font-family: 'Roboto',sans-serif;
+  background-color: $bgc;
+  border-radius: 30px 30px 0 0;
+  padding-left: 2%;
+  padding-right: 2%;
+  h1, .i-heart{
+    display: inline-flex;
+    justify-content: space-between;
+  }
 }
+/* *******section les entrées****** */
+.entry-contenair{
+  width: 100%;
+}
+
+.subtitle-menu-card{
+    @include subtitle-h2-menu;
+  }
+
+.pargph, strong{
+  display: inline-flex;
+}
+
+
+@mixin menu-card-color{
+  background-color: #fff;
+  border-radius: 20px 20px 20px 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  box-shadow: $btn-shadow-size;
+  margin: 0;
+  font-family: 'roboto', sans-serif;
+  line-height: normal;
+}
+
+.enchante{
+  @include menu-card-color;
+}
+.dish{
+  @include menu-card-color;
+}
+.pudding{
+  @include menu-card-color;
+}
+
+.titre-menu{
+    font-family: 'Shrikhand',sans-serif;
+    font-size: 2rem;
+    width: 90%;
+  }
+
 .introduction-menu{
   & img{
     object-fit: cover;

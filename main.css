@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body {
   height: 100%;
@@ -49,7 +50,6 @@ body {
 }
 
 .header--menu a {
-  border: 1px solid;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,6 +60,7 @@ body {
   text-decoration: none;
   line-height: 60px;
   height: 60px;
+  background-color: #f2f2f2;
 }
 
 .header--menu a .logo {
@@ -422,7 +423,82 @@ label {
 
 /* *****************PAGE MENU LA NOTE ENCHANTEE********************************************** */
 .menu_main {
+  background-color: #f2f2f2;
+  border-radius: 30px 30px 0 0;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.menu_main h1, .menu_main .i-heart {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* *******section les entrées****** */
+.entry-contenair {
+  width: 100%;
+}
+
+.subtitle-menu-card {
+  width: 8%;
   font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.pargph, strong {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.enchante {
+  background-color: #fff;
+  border-radius: 20px 20px 20px 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  -webkit-box-shadow: 0.6rem 0.6rem 0.6rem;
+          box-shadow: 0.6rem 0.6rem 0.6rem;
+  margin: 0;
+  font-family: 'roboto', sans-serif;
+  line-height: normal;
+}
+
+.dish {
+  background-color: #fff;
+  border-radius: 20px 20px 20px 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  -webkit-box-shadow: 0.6rem 0.6rem 0.6rem;
+          box-shadow: 0.6rem 0.6rem 0.6rem;
+  margin: 0;
+  font-family: 'roboto', sans-serif;
+  line-height: normal;
+}
+
+.pudding {
+  background-color: #fff;
+  border-radius: 20px 20px 20px 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  -webkit-box-shadow: 0.6rem 0.6rem 0.6rem;
+          box-shadow: 0.6rem 0.6rem 0.6rem;
+  margin: 0;
+  font-family: 'roboto', sans-serif;
+  line-height: normal;
+}
+
+.titre-menu {
+  font-family: 'Shrikhand',sans-serif;
+  font-size: 2rem;
+  width: 90%;
 }
 
 .introduction-menu img {
