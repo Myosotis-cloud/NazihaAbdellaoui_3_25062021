@@ -15,7 +15,7 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   margin-bottom: 15px;
 }
 @mixin subtitle-h2-menu {
-  width: 8%;
+  width: 5%;
   font-family: 'Roboto',sans-serif;
   font-weight: 300;
   font-size: 1.2rem;
@@ -24,6 +24,38 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   text-transform: uppercase;
 }
 
+.loading{
+  border-top: 20px dotted $color-primary;
+  border-left: 20px dotted $color-secondary;
+  border-right: 20px dotted $color-third;
+  border-bottom: 20px dotted $color-primary;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  animation: spin 4s 0.5s linear;
+  animation-delay: 4s;
+}
+
+@-webkit-keyframes spin{
+0%{
+  -webkit-transform: rotate(0deg);
+}
+100%{
+  -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin{
+0%{
+  transform: rotate(0deg);
+}
+100%{
+  transform: rotate(360deg);
+  }
+}
 
   html,
   body {
@@ -72,29 +104,44 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
 
 .header {
   @include heading;
+  box-shadow: 0 1px 4px grey;
+  border-bottom: 2px solid #f4f4f4;
     a img {
       width: 160px;
     }
 }
 
-.header--menu a{
-  width: 100%;
+.header--menu{
   display: flex;
+  flex-direction: column;
   align-items: center;
-  text-decoration: none;
-  line-height: 60px;
-  height: 60px;
-  background-color:$bgc;
-    .logo{
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-      img{
-        height: 40px;
+    > .logo-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 1px 4px gray;
+    border-bottom: 2px solid #f4f4f4;
+    padding: 5px 46px;
+      > .fleche_menu{
+      display: block;
+      margin-right: 275px;
+      position: absolute;
+      left: 25px;
+      color: #000;
       }
     }
 }
+
+.cover_img{
+height: 100%;
+object-fit: cover;
+width: 100%;
+}
+
 i.fleche_menu{
   font-size: 1.5rem;
   padding-left: 25px;
@@ -107,7 +154,7 @@ i.fleche_menu{
   %typography {
     font-family: "Roboto", sans-serif;
     color: #fff;
-    background-color: $color-secondary;
+    background: linear-gradient($color-secondary, $color-primary);
     font-size: 0.8rem;
     box-shadow: $btn-shadow-size;
     font-weight: 400;
@@ -188,30 +235,40 @@ i.ustensils{
     > .input-container {
       position: relative;
       font-family: "Roboto", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
       width: 100%;
-      text-align: center;
       > .input_icon {
         position: absolute;
-        width: 90%;
-        top: 2%;
-        > .head-titles {
-          font-family: "roboto", sans-serif;
-          display: block;
-          text-align: center;
-          line-height: normal;
-          .title_main {
-            @include h1;
-            + h4 {
-              font-size: 1rem;
-              font-weight: 100;
-              margin: 0;
+        right: 20em;
+        padding-right: 10px;
+          > .head-titles {
+            font-family: "roboto", sans-serif;
+            display: block;
+            text-align: center;
+            line-height: normal;
+            .title_main {
+              @include h1;
+              + h4 {
+                font-size: 1rem;
+                font-weight: 100;
+                margin: 0;
+              }
             }
           }
-        }
       }
     }
   }
-  
+/*.input-container .input_icon {
+    padding: 8px 10px;
+}*/
+.search_bare{
+  width: 100%;
+  box-shadow: 0 1px 4px #808080;
+  /*border-top: 1px solid;*/
+}
   .btn-explorer {
     padding-top: 20px;
   }
@@ -392,6 +449,8 @@ label{
     justify-content: space-between;
   }
 }
+
+
 /* *******section les entrées****** */
 .entry-contenair{
   width: 100%;
@@ -412,18 +471,12 @@ label{
   padding-left: 20px;
   padding-top: 5px;
   box-shadow: $btn-shadow-size;
-  margin: 0;
+  margin: 20px;
   font-family: 'roboto', sans-serif;
   line-height: normal;
 }
 
-.enchante{
-  @include menu-card-color;
-}
-.dish{
-  @include menu-card-color;
-}
-.pudding{
+.enchante, .dish, .pudding{
   @include menu-card-color;
 }
 
@@ -431,12 +484,21 @@ label{
     font-family: 'Shrikhand',sans-serif;
     font-size: 2rem;
     width: 90%;
+    margin: 0;
   }
 
 .introduction-menu{
-  & img{
-    object-fit: cover;
-    width: 100%;
-    height: 250px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  figure{
+    margin:0;
+    padding: 0;
+    & img{
+      object-fit: cover;
+      height: 270px;
+      width: 100%;
+      z-index: -1;
+    }
   }
 }
