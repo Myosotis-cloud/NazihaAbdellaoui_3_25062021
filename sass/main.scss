@@ -21,6 +21,7 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   font-size: 1.2rem;
   border-bottom: 3px solid $color-third;
   padding-bottom: 5px;
+  margin-left: 20px;
   text-transform: uppercase;
 }
 
@@ -126,6 +127,7 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
     box-shadow: 0 1px 4px gray;
     border-bottom: 2px solid #f4f4f4;
     padding: 5px 46px;
+    height: 65px;
       > .fleche_menu{
       display: block;
       margin-right: 275px;
@@ -136,8 +138,14 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
     }
 }
 
+.logo-nav a img{
+  width: 200px;
+  height: 30px;
+}
+
+
 .cover_img{
-height: 100%;
+height: 300px;
 object-fit: cover;
 width: 100%;
 }
@@ -242,8 +250,7 @@ i.ustensils{
       width: 100%;
       > .input_icon {
         position: absolute;
-        right: 20em;
-        padding-right: 10px;
+        padding-right: 8em;
           > .head-titles {
             font-family: "roboto", sans-serif;
             display: block;
@@ -269,8 +276,14 @@ i.ustensils{
   box-shadow: 0 1px 4px #808080;
   /*border-top: 1px solid;*/
 }
+
+/*créer mixin pour btn-explorer*/
+
   .btn-explorer {
     padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
   }
   
   input {
@@ -281,6 +294,7 @@ i.ustensils{
     width: 100%;
     background-color: hsl(0, 0%, 82.7%);
     display: inline-block;
+    flex: 1;
   }
   
   input::-webkit-input-placeholder {
@@ -441,9 +455,10 @@ label{
 /* *****************PAGE MENU LA NOTE ENCHANTEE********************************************** */
 .menu_main{
   background-color: $bgc;
-  border-radius: 30px 30px 0 0;
+  border-radius: 40px 40px 0 0;
   padding-left: 2%;
   padding-right: 2%;
+  margin-top: -30px;
   h1, .i-heart{
     display: inline-flex;
     justify-content: space-between;
@@ -460,45 +475,70 @@ label{
     @include subtitle-h2-menu;
   }
 
-.pargph, strong{
-  display: inline-flex;
+.txt-card, strong{
+  display: inline-block;
 }
 
-
-@mixin menu-card-color{
+@mixin menu-card-typo{
   background-color: #fff;
   border-radius: 20px 20px 20px 20px;
-  padding-left: 20px;
-  padding-top: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   box-shadow: $btn-shadow-size;
   margin: 20px;
+  display: flex;
   font-family: 'roboto', sans-serif;
   line-height: normal;
+  flex:1;
 }
 
 .enchante, .dish, .pudding{
-  @include menu-card-color;
+  @include menu-card-typo;
+  > .txt-card{
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    h3{
+      margin: 0;
+      font-size: 1rem;
+      + p{
+        font-size: 0.9rem;
+        + strong{
+          font-size: 1rem;
+          padding-right: 15px;
+          display: inline-flex;
+        }
+      }
+    }
+  }
 }
 
 .titre-menu{
     font-family: 'Shrikhand',sans-serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
     width: 90%;
-    margin: 0;
+    padding-left: 20px;
   }
 
-.introduction-menu{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  figure{
-    margin:0;
-    padding: 0;
-    & img{
-      object-fit: cover;
-      height: 270px;
-      width: 100%;
-      z-index: -1;
-    }
+  $easing: cubic-bezier(.49,.18,.23,1);
+  $width: 20vh;
+  $height: 10vh;
+  $margin-left: 3vh;
+  $wid-marg: $width + $margin-left;
+
+  .btn-freshmint{
+      width: $width;
+      height: $height;
+      overflow: hidden;
+      > .check_custom{
+      color: #fff;
+      background-color: $color-third;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin: auto;
+      font-size: larger;
+      }
   }
-}
