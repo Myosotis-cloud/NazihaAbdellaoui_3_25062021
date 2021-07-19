@@ -25,45 +25,13 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   text-transform: uppercase;
 }
 
-.loading{
-  border-top: 20px dotted $color-primary;
-  border-left: 20px dotted $color-secondary;
-  border-right: 20px dotted $color-third;
-  border-bottom: 20px dotted $color-primary;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  animation: spin 4s 0.5s linear;
-  animation-delay: 4s;
-}
-
-@-webkit-keyframes spin{
-0%{
-  -webkit-transform: rotate(0deg);
-}
-100%{
-  -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin{
-0%{
-  transform: rotate(0deg);
-}
-100%{
-  transform: rotate(360deg);
-  }
-}
-
   html,
   body {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
   }
   
   * {
@@ -129,7 +97,7 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
     padding: 5px 46px;
     height: 65px;
       > .fleche_menu{
-      display: block;
+      display: flex;
       margin-right: 275px;
       position: absolute;
       left: 25px;
@@ -294,7 +262,7 @@ i.ustensils{
     width: 100%;
     background-color: hsl(0, 0%, 82.7%);
     display: inline-block;
-    flex: 1;
+    flex: 1 1;
   }
   
   input::-webkit-input-placeholder {
@@ -356,8 +324,10 @@ i.ustensils{
       background-color: $bgc;
       margin: .5rem;
       padding: .5rem;
+      cursor: pointer;
       &:hover{
-        background-color: $color-pastel;
+        background: #f2eafb;
+        box-shadow: 2px 2px 10px 2px #e4d5f6;
       }
       .nav_number{
         border: 1px solid $color-primary;
@@ -374,13 +344,18 @@ i.ustensils{
           color: darkgray;
           font-size: 1.3rem;
           margin-right: 30px;
-          + .title_nav{
-            font-size: 1em;
-          }   
+            + .title_nav{
+              font-size: 1em;
+            }
         }
       }
     }
   }
+
+.nav_custom_icon:hover{
+color: $color-primary;
+}
+
 
 #restaurant_cards{
 width: 100%;
@@ -482,36 +457,37 @@ label{
 @mixin menu-card-typo{
   background-color: #fff;
   border-radius: 20px 20px 20px 20px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 15px;
   box-shadow: $btn-shadow-size;
   margin: 20px;
   display: flex;
   font-family: 'roboto', sans-serif;
   line-height: normal;
   flex:1;
+  height: 18vh;
 }
 
 .enchante, .dish, .pudding{
   @include menu-card-typo;
   > .txt-card{
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     h3{
       margin: 0;
       font-size: 1rem;
       + p{
         font-size: 0.9rem;
-        + strong{
-          font-size: 1rem;
-          padding-right: 15px;
-          display: inline-flex;
-        }
       }
     }
   }
+}
+
+strong{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .titre-menu{
@@ -522,23 +498,155 @@ label{
   }
 
   $easing: cubic-bezier(.49,.18,.23,1);
-  $width: 20vh;
-  $height: 10vh;
-  $margin-left: 3vh;
+  $width: 100px;
+  $height: 105px;
+  $line-height: 105px;
+  $margin-left: 20px;
   $wid-marg: $width + $margin-left;
 
-  .btn-freshmint{
-      width: $width;
-      height: $height;
-      overflow: hidden;
-      > .check_custom{
-      color: #fff;
-      background-color: $color-third;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      margin: auto;
-      font-size: larger;
-      }
+.btn-freshmint{
+  position: relative;
+  overflow: hidden;
+  width: $width;
+  height: $height;
+  border-radius: 0 20px 20px 0;
+  margin-left: $margin-left;
+  background-color: $color-third;
+  border-radius: 0 20px 20px 0;
+  transition: transform 1s ease-in-out 4s;
+}
+
+.txt-menu:hover .btn-freshmint{
+    transform: translateX(100%);
+    overflow: hidden;
+    animation: right-to-left 2s ease-in-out forwards alternate;
+}
+
+:any-link{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+
+@keyframes right-to-left {
+  0%{
+    transform: translateX(0);
   }
+  33%{
+    transform: translate(100%);
+  }
+  66%{
+    transform: translate(100%);
+  }
+  100%{
+    transform: translate(100%);
+  }
+}
+
+  .btn__check{
+  position: absolute;
+  right: 40%;
+  text-align: center;
+  height: $height;
+  line-height: $line-height;
+  overflow: hidden;
+}
+.check_custom{
+  color: #fff;
+  background-color: $color-third;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+  
+  
+/* ************************************LOADER SPINNER******************************* */
+@keyframes loader-spinner{
+  100%{
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.loader-spinner{
+    animation: loader-spinner 3s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    background: rgba(10, 10, 10, 0.6);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+    z-index: 999;
+    img{
+      height: 10vh;
+      position: relative;
+      top: 15em;
+      opacity: 0.4;
+      max-width: 100%;
+  }
+}
+
+.loader {
+  display: inline-block;
+  position: relative;
+  top: 15em;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border: 4px solid transparent;
+  border-top-color: #ff79da;
+  animation: loader 2s infinite;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.loader__cover {
+  position: relative;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.loader__bar {
+  animation: loader 2s infinite;
+  position: absolute;
+  left: 0;
+  top: 5em;
+  border-radius: 100%;
+  width: 50%;
+  height: 50%;
+  transform-origin: 100% 100%;
+}
+
+
+.loader::before {
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #ff79da;
+  animation: loader 2s infinite;
+}
+
+.loader::before {
+  content: "";
+}
