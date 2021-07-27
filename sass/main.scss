@@ -48,9 +48,6 @@ font-family: 'Roboto';
   padding-top: 3rem;
 }
 
-
-
-
   html,
   body {
     height: 100%;
@@ -66,7 +63,7 @@ font-family: 'Roboto';
   
   $breakpoints: (
     desktop:1920px,
-    tablette: 900px,
+    tablette: 1024px,
     mobile: 599px
   );
   
@@ -75,7 +72,6 @@ font-family: 'Roboto';
       @content;
     }
   }
-  
   .proj-layout {
     display: grid;
     justify-content: center;
@@ -86,6 +82,12 @@ font-family: 'Roboto';
       margin: auto;
     }
   }
+
+  @mixin tablette {
+    @media screen and (max-width: map-get($breakpoints, tablette)) {
+      @content;
+    }
+  }  
   
   /* ******header ******* */
 @mixin heading {
@@ -182,7 +184,7 @@ i.fleche_menu{
     margin: 0;
     background-color: rgb(63, 60, 60);
     color: white;
-    padding: .5rem .5rem 2rem .5rem;
+    padding-left: 3rem;
     line-height: 32px;
     display: block;
     h1 {
@@ -236,25 +238,32 @@ i.ustensils{
     text-align: center;
     background-color: #f2f2f2;
     padding-bottom: 50px;
-    > .input-container {
-      position: relative;
-      font-family: "Roboto", sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
-      width: 100%;
-      > .input_icon {
-        position: absolute;
-        padding-right: 8em;
-          > .head-titles {
-            font-family: "roboto", sans-serif;
-            display: block;
-            text-align: center;
-            line-height: normal;
+      > .input-container {
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        /*@include tablette{
+          width: 250px;
+          background-color: $color-primary;
+          color: white;
+          border-radius: 10px;*/
+        
+          > .input_icon {
+            position: absolute;
+            padding-right: 8em;
+              > .head-titles {
+                font-family: "roboto", sans-serif;
+                display: block;
+                text-align: center;
+                line-height: normal;
+              }
           }
+        
       }
-    }
   }       
             
 .title_main {
@@ -274,7 +283,7 @@ h4{
   /*border-top: 1px solid;*/
 }
 
-@mixin btn-explorer-pagemenu {
+@mixin btn-explorer {
 padding-top: 20px;
 padding-bottom: 20px;
 display: flex;
@@ -282,7 +291,7 @@ justify-content: center;
 }
 
   .btn-explorer {
-  @include btn-explorer-pagemenu;
+  @include btn-explorer;
   }
   
   input {
@@ -387,50 +396,96 @@ justify-content: center;
       }
     }
   }
-
+@mixin mp-rest-cards{
+  font-family: 'Roboto',sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: $bgc;
+  margin-top: 4rem;
+}
 
 #restaurant_cards{
-width: 100%;
-font-family: 'Roboto',sans-serif;
-padding-left: 5%;
-padding-right: 5%;
-background-color: $bgc;
-margin-top: 4rem;
-  .__card{
-    display: block;
-    text-decoration: none;
-    color: black;
-    border-radius: 20px 20px 20px 20px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 0 0 darkgray;
-    margin-bottom: 20px;
-    position:relative;
-    .title_nav{
-      font-size: 1.2rem;
-      font-weight: 900;
-      margin: 0;
-      + .pargph{
-        font-weight: 300;
-        font-size: 1rem;
+  display: grid;
+  @include tablette {
+    grid-template-columns: 50% 50%;
+    /*grid-template-rows: 20vh 1fr 1fr;*/
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+    gap: 20px;   
+    @include mp-rest-cards;
+  @include mobile-only{
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+    @include mp-rest-cards;
+        .__card{
+          @include tablette{
+            grid-column: 1 / span 3;
+            grid-row: 2 / span 4;
+            @include mobile-only{
+              grid-column: 1 / 2;
+              grid-row: 2 / span 6;
+              text-decoration: none;
+              color: black;
+              border-radius: 20px 20px 20px 20px;
+              box-sizing: border-box;
+              box-shadow: 1px 1px 0 0 darkgray;
+              margin-bottom: 20px;
+              position:relative;
+              background-color: white;    
+              .title_nav{
+                font-size: 1.2rem;
+                font-weight: 900;
+                margin: 0;
+              }
+            }
+          }
       }
     }
   }
 }
 
-.subtitle-accueil{
-  @include subtitle-h2-accueil;
+.__card{
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 6px 2px darkgray;
 }
 
-p{
-margin: 0;
+.subtitle-accueil{
+  @include subtitle-h2-accueil;
+  @include tablette{
+    width: 100%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding-top: 2rem;
+  }
+}
+
+@mixin txt-card-accueil {
+font-family: 'Roboto',sans-serif;
+padding-left: 15px;
+padding-bottom: 20px;
+padding-top: 10px;
+padding-right: 20px;
 }
 
 .description_card{
-padding-left: 15px;
-padding-bottom: 10px;
-padding-top: 10px;
-padding-right: 20px;
-margin: 0;
+@include txt-card-accueil;
+  > .des-txt{
+    h3{
+      @include tablette{
+      margin-bottom: 0;
+      margin-top: 0;
+      font-size: 1.5rem;
+        + .pargph{
+          @include tablette{
+          margin: 0;
+          font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
 }
 .description_card, .i-heart{
   display: flex;
@@ -439,7 +494,7 @@ margin: 0;
 }
 .i-heart{
 font-size: 2rem;
-background-color: #f2f2f2;
+color: rgb(90, 87, 87);
   &:hover{
     color: blueviolet;
   }
@@ -453,7 +508,7 @@ background-color: #f2f2f2;
   border-radius: 20px 20px 0 0;
 }
 
-label{
+@mixin label-nouveau{
   background-color: $color-third;
   width: 100px;
   color: $color-darken;
@@ -461,10 +516,20 @@ label{
   justify-content: center;
   align-items: center;
   height: 35px;
-  font-weight: 500;
+  font-weight: 800;
+  font-family: 'roboto',sans-serif;
   position: absolute;
   bottom: 11em;
   right: 1em;
+}
+
+label{
+  @include label-nouveau;
+    @include tablette {
+      position: relative;
+      bottom: 9em;
+      left: 1em;
+    }
 }
 
 
@@ -532,6 +597,7 @@ strong{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 2;
 }
 
 .titre-menu{
@@ -580,37 +646,6 @@ strong{
   text-decoration: none;
   color: black;
   cursor: pointer;
-}
-
-@keyframes right-to-left {
-  0%{
-    transform: translateX(0);
-  }
-  33%{
-    transform: translate(100%);
-  }
-  66%{
-    transform: translate(100%);
-  }
-  100%{
-    transform: translate(100%);
-  }
-}
-
-
-@keyframes left-to-right {
-  0%{
-    transform: translateX(0);
-  }
-  33%{
-    transform: translate(100%);
-  }
-  66%{
-    transform: translate(100%);
-  }
-  100%{
-    transform: translate(100%);
-  }
 }
 
   .btn__check{
