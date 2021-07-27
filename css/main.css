@@ -47,23 +47,18 @@ body {
 }
 .header--menu > .logo-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  flex-flow: column;
   background: white;
   width: 100%;
-  text-align: center;
-  box-shadow: 0 1px 4px gray;
+  box-shadow: 0 1px 4px grey;
   border-bottom: 2px solid #f4f4f4;
-  padding: 5px 46px;
   height: 65px;
 }
 .header--menu > .logo-nav > .fleche_menu {
   display: flex;
-  margin-right: 275px;
-  position: absolute;
-  left: 25px;
-  color: #000;
+  position: relative;
+  right: 8em;
 }
 
 .logo-nav a img {
@@ -89,20 +84,20 @@ i.fleche_menu {
   font-family: "Roboto", sans-serif;
   color: #fff;
   background: linear-gradient(#ff79da, #9356DC);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   box-shadow: 0.6rem 0.6rem 0.6rem;
   font-weight: 400;
   border-radius: 20px 20px 20px 20px;
-  width: 250px;
+  width: 200px;
   line-height: 40px;
   height: 40px;
   border: none;
-  transition: transform 2s, background-color 300ms 3s;
+  transition: transform 1s, background-color 300ms 3s;
 }
 
 .btn:hover {
   transform: scale(1.15);
-  background-color: #ff79d9c4;
+  background: linear-gradient(#ff79d9a2, #9256dcb6);
 }
 
 /* *************fin bouton********* */
@@ -307,13 +302,13 @@ input::placeholder {
   color: darkgray;
   font-size: 1.3rem;
   margin-right: 30px;
+  transition: transform 300ms;
 }
-.nav_main > .nav__heading .nav_number + .nav_custom_icon + .title_nav {
-  font-size: 1em;
-}
-
-.nav_custom_icon:hover {
+.nav_main > .nav__heading .nav_number + .nav_custom_icon:hover {
   color: #9356DC;
+}
+.nav_main > .nav__heading .nav_number + .nav_custom_icon:hover + .title_nav {
+  font-size: 1em;
 }
 
 #restaurant_cards {
@@ -360,7 +355,7 @@ p {
 
 .i-heart {
   font-size: 2rem;
-  color: grey;
+  background-color: #f2f2f2;
 }
 .i-heart:hover {
   color: blueviolet;
@@ -438,10 +433,13 @@ label {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .enchante > .txt-card h3, .dish > .txt-card h3, .pudding > .txt-card h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .enchante > .txt-card h3 + p, .dish > .txt-card h3 + p, .pudding > .txt-card h3 + p {
   font-size: 0.9rem;
@@ -456,26 +454,34 @@ strong {
 .titre-menu {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.7rem;
-  width: 90%;
+  width: 80%;
   padding-left: 20px;
 }
 
 .btn-freshmint {
-  position: relative;
-  overflow: hidden;
   width: 100px;
-  height: 105px;
+  overflow: hidden;
+  height: auto;
   border-radius: 0 20px 20px 0;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: -100px;
   background-color: #99E2D0;
   border-radius: 0 20px 20px 0;
-  transition: transform 1s ease-in-out 4s;
+  transition: transform 1s ease-in-out;
 }
 
 .txt-menu:hover .btn-freshmint {
-  transform: translateX(100%);
-  overflow: hidden;
-  animation: right-to-left 2s ease-in-out forwards alternate;
+  transform: translate(-100px, 0);
+}
+
+.txt-menu:hover + .check__anim .btn__anim {
+  transform: rotate(-360deg);
+  transition: transform 1s ease-in-out;
+}
+
+.check__anim {
+  display: flex;
+  justify-content: center;
 }
 
 :any-link {
@@ -498,12 +504,24 @@ strong {
     transform: translate(100%);
   }
 }
+@keyframes left-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translate(100%);
+  }
+  66% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(100%);
+  }
+}
 .btn__check {
-  position: absolute;
-  right: 40%;
   text-align: center;
-  height: 105px;
-  line-height: 105px;
+  height: 18vh;
+  line-height: 18vh;
   overflow: hidden;
 }
 

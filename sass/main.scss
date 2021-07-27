@@ -1,7 +1,8 @@
 $color-primary: #9356DC;
+$color-primary-lighten: #9256dcb6;
 $color-pastel: #9256dc2f;
 $color-secondary: #ff79da;
-$color-secondary-lighting : #ff79d9c4;
+$color-secondary-lighten: #ff79d9a2;
 $color-third: #99E2D0;
 $color-darken:#1a6653;
 $bgc: #f2f2f2;
@@ -85,23 +86,18 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   flex-direction: column;
   align-items: center;
     > .logo-nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-flow: column;
-    background: white;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 1px 4px gray;
-    border-bottom: 2px solid #f4f4f4;
-    padding: 5px 46px;
-    height: 65px;
-      > .fleche_menu{
       display: flex;
-      margin-right: 275px;
-      position: absolute;
-      left: 25px;
-      color: #000;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      width: 100%;
+      box-shadow: 0 1px 4px grey;
+      border-bottom: 2px solid #f4f4f4;
+      height: 65px;
+      > .fleche_menu{
+        display: flex;
+        position: relative;
+        right: 8em;
       }
     }
 }
@@ -131,24 +127,25 @@ i.fleche_menu{
     font-family: "Roboto", sans-serif;
     color: #fff;
     background: linear-gradient($color-secondary, $color-primary);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     box-shadow: $btn-shadow-size;
     font-weight: 400;
     border-radius: 20px 20px 20px 20px;
-    width: 250px;
+    width: 200px;
     line-height: 40px;
     height: 40px;
     border: none;
-    transition: transform 2s, background-color 300ms 3s;
+    transition: transform 1s, background-color 300ms 3s;
   }
   .btn {
     @extend %typography;
     &:hover {
       transform: scale(1.15);
-      background-color: $color-secondary-lighting;
+      background: linear-gradient($color-secondary-lighten, $color-primary-lighten);
     }
   }
   /* *************fin bouton********* */
+
   /* ************footer************* */
   .nav-footer{
     position: relative;
@@ -344,17 +341,17 @@ i.ustensils{
           color: darkgray;
           font-size: 1.3rem;
           margin-right: 30px;
+          transition: transform 300ms ;
+          &:hover{
+            color: $color-primary;
             + .title_nav{
               font-size: 1em;
             }
+          }
         }
       }
     }
   }
-
-.nav_custom_icon:hover{
-color: $color-primary;
-}
 
 
 #restaurant_cards{
@@ -398,7 +395,7 @@ margin: 0;
 }
 .i-heart{
 font-size: 2rem;
-color: grey;
+background-color: #f2f2f2;
   &:hover{
     color: blueviolet;
   }
@@ -474,9 +471,12 @@ label{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     h3{
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.2rem;
       + p{
         font-size: 0.9rem;
       }
@@ -493,7 +493,7 @@ strong{
 .titre-menu{
     font-family: 'Shrikhand',sans-serif;
     font-size: 1.7rem;
-    width: 90%;
+    width: 80%;
     padding-left: 20px;
   }
 
@@ -501,25 +501,35 @@ strong{
   $width: 100px;
   $height: 105px;
   $line-height: 105px;
-  $margin-left: 20px;
+  $margin-left: 100px;
   $wid-marg: $width + $margin-left;
 
 .btn-freshmint{
-  position: relative;
-  overflow: hidden;
   width: $width;
-  height: $height;
+  overflow: hidden;
+  height: auto;
   border-radius: 0 20px 20px 0;
-  margin-left: $margin-left;
+  margin-left: 10px;
+  margin-right: -100px;
   background-color: $color-third;
   border-radius: 0 20px 20px 0;
-  transition: transform 1s ease-in-out 4s;
+  transition: transform 1s ease-in-out;
 }
 
 .txt-menu:hover .btn-freshmint{
-    transform: translateX(100%);
-    overflow: hidden;
-    animation: right-to-left 2s ease-in-out forwards alternate;
+  transform: translate(-100px, 0);
+}
+
+.txt-menu:hover + .check__anim{
+    .btn__anim{
+      transform: rotate(-360deg);
+      transition: transform 1s ease-in-out;
+    }
+}
+
+.check__anim{
+  display: flex;
+  justify-content: center;
 }
 
 :any-link{
@@ -527,7 +537,6 @@ strong{
   color: black;
   cursor: pointer;
 }
-
 
 @keyframes right-to-left {
   0%{
@@ -544,14 +553,29 @@ strong{
   }
 }
 
-  .btn__check{
-  position: absolute;
-  right: 40%;
-  text-align: center;
-  height: $height;
-  line-height: $line-height;
-  overflow: hidden;
+
+@keyframes left-to-right {
+  0%{
+    transform: translateX(0);
+  }
+  33%{
+    transform: translate(100%);
+  }
+  66%{
+    transform: translate(100%);
+  }
+  100%{
+    transform: translate(100%);
+  }
 }
+
+  .btn__check{
+      text-align: center;
+      height: 18vh;
+      line-height: 18vh;
+      overflow: hidden;
+  }
+
 .check_custom{
   color: #fff;
   background-color: $color-third;
