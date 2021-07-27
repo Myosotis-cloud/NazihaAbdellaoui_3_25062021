@@ -10,11 +10,26 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
 
 @mixin h1 {
   font-family: 'Roboto',sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 900;
   flex-wrap: wrap;
   margin-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  width: 100%;
 }
+
+@mixin title-h4-accueil {
+font-size: 1.2rem;
+font-weight: 300;
+margin: 0;
+flex-wrap: wrap;
+padding-left: 20px;
+padding-right: 20px;
+font-family: 'Roboto';
+}
+
 @mixin subtitle-h2-menu {
   width: 5%;
   font-family: 'Roboto',sans-serif;
@@ -25,6 +40,16 @@ $btn-shadow-size: 0.6rem 0.6rem 0.6rem;
   margin-left: 20px;
   text-transform: uppercase;
 }
+
+@mixin subtitle-h2-accueil{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-top: 3rem;
+}
+
+
+
 
   html,
   body {
@@ -119,9 +144,13 @@ i.fleche_menu{
   padding-left: 25px;
   color: rgb(63, 60, 60);
 }
-
-
   /* *************header ********* */
+
+
+
+
+
+
   /* ****************bouton*********** */
   %typography {
     font-family: "Roboto", sans-serif;
@@ -130,11 +159,12 @@ i.fleche_menu{
     font-size: 0.9rem;
     box-shadow: $btn-shadow-size;
     font-weight: 400;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 30px;
     width: 200px;
-    line-height: 40px;
-    height: 40px;
+    line-height: 50px;
+    height: 50px;
     border: none;
+    margin-top: 20px;
     transition: transform 1s, background-color 300ms 3s;
   }
   .btn {
@@ -196,6 +226,7 @@ i.ustensils{
 
   /* ******* fin footer ******* */
   
+  /* *******SECTION INTRO ************** */
   .introduction {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -221,18 +252,19 @@ i.ustensils{
             display: block;
             text-align: center;
             line-height: normal;
-            .title_main {
-              @include h1;
-              + h4 {
-                font-size: 1rem;
-                font-weight: 100;
-                margin: 0;
-              }
-            }
           }
       }
     }
-  }
+  }       
+            
+.title_main {
+@include h1;
+}
+
+h4{
+@include title-h4-accueil;
+}
+          
 /*.input-container .input_icon {
     padding: 8px 10px;
 }*/
@@ -242,13 +274,15 @@ i.ustensils{
   /*border-top: 1px solid;*/
 }
 
-/*créer mixin pour btn-explorer*/
+@mixin btn-explorer-pagemenu {
+padding-top: 20px;
+padding-bottom: 20px;
+display: flex;
+justify-content: center; 
+}
 
   .btn-explorer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    justify-content: center;
+  @include btn-explorer-pagemenu;
   }
   
   input {
@@ -310,6 +344,7 @@ i.ustensils{
   .nav_main{
     padding-left: 5%;
     padding-right: 5%;
+    margin-top: 0;
     > .nav__heading{
       width: 100%;
       display: inline-flex;
@@ -357,6 +392,10 @@ i.ustensils{
 #restaurant_cards{
 width: 100%;
 font-family: 'Roboto',sans-serif;
+padding-left: 5%;
+padding-right: 5%;
+background-color: $bgc;
+margin-top: 4rem;
   .__card{
     display: block;
     text-decoration: none;
@@ -364,7 +403,7 @@ font-family: 'Roboto',sans-serif;
     border-radius: 20px 20px 20px 20px;
     box-sizing: border-box;
     box-shadow: 1px 1px 0 0 darkgray;
-    margin: 20px;
+    margin-bottom: 20px;
     position:relative;
     .title_nav{
       font-size: 1.2rem;
@@ -378,9 +417,14 @@ font-family: 'Roboto',sans-serif;
   }
 }
 
+.subtitle-accueil{
+  @include subtitle-h2-accueil;
+}
+
 p{
 margin: 0;
 }
+
 .description_card{
 padding-left: 15px;
 padding-bottom: 10px;

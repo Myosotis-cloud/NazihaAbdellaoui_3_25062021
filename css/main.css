@@ -87,11 +87,12 @@ i.fleche_menu {
   font-size: 0.9rem;
   box-shadow: 0.6rem 0.6rem 0.6rem;
   font-weight: 400;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 30px;
   width: 200px;
-  line-height: 40px;
-  height: 40px;
+  line-height: 50px;
+  height: 50px;
   border: none;
+  margin-top: 20px;
   transition: transform 1s, background-color 300ms 3s;
 }
 
@@ -150,6 +151,7 @@ i.ustensils {
 }
 
 /* ******* fin footer ******* */
+/* *******SECTION INTRO ************** */
 .introduction {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -179,17 +181,27 @@ i.ustensils {
   text-align: center;
   line-height: normal;
 }
-.introduction > .input-container > .input_icon > .head-titles .title_main {
+
+.title_main {
   font-family: "Roboto", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 900;
   flex-wrap: wrap;
   margin-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  width: 100%;
 }
-.introduction > .input-container > .input_icon > .head-titles .title_main + h4 {
-  font-size: 1rem;
-  font-weight: 100;
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 300;
   margin: 0;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Roboto";
 }
 
 /*.input-container .input_icon {
@@ -201,7 +213,6 @@ i.ustensils {
   /*border-top: 1px solid;*/
 }
 
-/*créer mixin pour btn-explorer*/
 .btn-explorer {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -268,6 +279,7 @@ input::placeholder {
 .nav_main {
   padding-left: 5%;
   padding-right: 5%;
+  margin-top: 0;
 }
 .nav_main > .nav__heading {
   width: 100%;
@@ -314,6 +326,10 @@ input::placeholder {
 #restaurant_cards {
   width: 100%;
   font-family: "Roboto", sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #f2f2f2;
+  margin-top: 4rem;
 }
 #restaurant_cards .__card {
   display: block;
@@ -322,7 +338,7 @@ input::placeholder {
   border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
   box-shadow: 1px 1px 0 0 darkgray;
-  margin: 20px;
+  margin-bottom: 20px;
   position: relative;
 }
 #restaurant_cards .__card .title_nav {
@@ -333,6 +349,13 @@ input::placeholder {
 #restaurant_cards .__card .title_nav + .pargph {
   font-weight: 300;
   font-size: 1rem;
+}
+
+.subtitle-accueil {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-top: 3rem;
 }
 
 p {
