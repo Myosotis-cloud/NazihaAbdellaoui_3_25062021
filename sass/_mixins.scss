@@ -1,0 +1,97 @@
+@mixin h1 {
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    width: 100%;
+  }
+  
+  @mixin title-h4-accueil {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Roboto';
+  }
+  
+  @mixin subtitle-h2-menu {
+    width: 5%;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    border-bottom: 3px solid $color-third;
+    padding-bottom: 5px;
+    margin-left: 20px;
+    text-transform: uppercase;
+  }
+  
+  @mixin subtitle-h2-accueil{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-top: 3rem;
+  }
+  
+  @mixin btn-number-accueil{
+    border: 1px solid $color-primary;
+    background-color: $color-primary;
+    color: white;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    right: 1.5em;
+  }
+
+  @mixin heading {
+    display: flex;
+    justify-content: center;
+    line-height: 60px;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @mixin btn-explorer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center; 
+  }
+
+  @mixin mp-rest-cards{
+    font-family: 'Roboto',sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: $bgc;
+    margin-top: 4rem;
+  }
+
+  @mixin txt-card-accueil {
+    font-family: 'Roboto',sans-serif;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    }
+
+    @mixin menu-card-typo{
+      background-color: #fff;
+      border-radius: 20px 20px 20px 20px;
+      padding-left: 15px;
+      box-shadow: $btn-shadow-size;
+      margin: 20px;
+      display: flex;
+      font-family: 'roboto', sans-serif;
+      line-height: normal;
+      flex:1;
+      height: 18vh;
+    }

@@ -1,0 +1,68 @@
+//IMG COUVERTURE PAGE MENU
+.cover_img{
+height: 300px;
+object-fit: cover;
+width: 100%;
+}
+
+.logo-nav a img{
+width: 200px;
+height: 30px;
+}
+//BOUTON ROSE DEGRADE
+.btn {
+    @extend %typography;
+    &:hover {
+      transform: scale(1.15);
+      background: linear-gradient($color-secondary-lighten, $color-primary-lighten);
+    }
+  }
+
+  .btn-explorer {
+    @include btn-explorer;
+    }
+
+//ANIMATION PAGE MENU - BTN VERT+ROTATE
+.btn-freshmint{
+    width: 0;
+    color: transparent;
+    margin-right: -100px;
+    margin-left: 20px;
+    overflow: hidden;
+    height: auto;
+    transition: transform 1s ease-in-out;
+  }
+  
+    .txt-menu:hover .btn-freshmint{
+      transform: translate(-100px, 0);
+      width: $width;
+      height: auto;
+      border-radius: 0 20px 20px 0;
+      background-color: $color-third;
+    }
+
+  .txt-menu:hover + .check__anim{
+      .btn__anim{
+        transform: rotate(-360deg);
+        transition: transform 1s ease-in-out;
+      }
+  }
+  
+  .check__anim{
+    display: flex;
+    justify-content: center;
+  }
+    .btn__check{
+        text-align: center;
+        height: 18vh;
+        line-height: 18vh;
+        overflow: hidden;
+    }
+    .check_custom{
+        color: #fff;
+        background-color: $color-third;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+ 
