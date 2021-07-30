@@ -18,13 +18,14 @@
   padding-left: 20px;
   padding-right: 20px;
   font-family: 'Roboto';
+  color: rgb(68, 65, 65);
   }
   
   @mixin subtitle-h2-menu {
     width: 5%;
     font-family: 'Roboto',sans-serif;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: $subtitle-h2;
     border-bottom: 3px solid $color-third;
     padding-bottom: 5px;
     margin-left: 20px;
@@ -34,7 +35,7 @@
   @mixin subtitle-h2-accueil{
     font-family: 'Roboto',sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: $subtitle-h2;
     padding-top: 3rem;
   }
   
@@ -48,7 +49,7 @@
     border-radius: 50%;
     text-align: center;
     position: relative;
-    right: 1.5em;
+    right: 1em;
   }
 
   @mixin heading {
@@ -93,5 +94,5 @@
       font-family: 'roboto', sans-serif;
       line-height: normal;
       flex:1;
-      height: 18vh;
+      //height: 18vh;
     }

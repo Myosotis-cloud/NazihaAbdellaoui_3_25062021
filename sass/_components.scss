@@ -17,7 +17,7 @@ height: 30px;
       background: linear-gradient($color-secondary-lighten, $color-primary-lighten);
     }
   }
-
+  
   .btn-explorer {
     @include btn-explorer;
     }
@@ -58,7 +58,7 @@ height: 30px;
         line-height: 18vh;
         overflow: hidden;
     }
-    .check_custom{
+    .btn__check--custom{
         color: #fff;
         background-color: $color-third;
         border-radius: 50%;

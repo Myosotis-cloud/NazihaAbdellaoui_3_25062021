@@ -1,3 +1,11 @@
+
+.proj-layout {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100%;
+  margin: auto;
+}
+
 //HEADER
 .header {
     @include heading;
@@ -35,7 +43,8 @@
     margin: 0;
     background-color: rgb(63, 60, 60);
     color: white;
-    padding-left: 3rem;
+    padding-left: 1rem;
+    padding-bottom: 2em;
     line-height: 32px;
     display: block;
     h1 {

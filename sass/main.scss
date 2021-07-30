@@ -1,39 +1,13 @@
 
-@import "variables";
-@import "mediaqueries";
-@import "mixins";
-@import "extend";
-@import "Layout";
-@import "components";
-@import "base";
-@import "pages";
-@import "spinner";
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_extend.scss';
+@import '_mediaqueries.scss';
+@import '_base.scss';
+@import '_components.scss';
+@import '_Layout.scss';
+@import '_pages.scss';
+@import '_spinner.scss';
 
-  
-  $breakpoints: (
-    desktop:1920px,
-    tablette: 1024px,
-    mobile: 599px
-  );
-  
-  @mixin mobile-only {
-    @media screen and (max-width: map-get($breakpoints, mobile)) {
-      @content;
-    }
-  }
-  .proj-layout {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 100%;
-    margin: auto;
-    @include mobile-only {
-      grid-template-columns: 1fr;
-      margin: auto;
-    }
-  }
 
-  @mixin tablette {
-    @media screen and (max-width: map-get($breakpoints, tablette)) {
-      @content;
-    }
-  }
+ 

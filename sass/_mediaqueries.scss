@@ -1,14 +1,50 @@
+
+
 //MOBILE FIRST
-@media screen and (max-width: 599px){
-    
+@media screen and (max-width: 599px) and (min-width: 280px){
+    #restaurant_cards{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+         @include mp-rest-cards;
+             .__card{
+                   grid-column: 1 / 2;
+                   grid-row: 2 / span 6;
+                   text-decoration: none;
+                   color: black;
+                   border-radius: 20px 20px 20px 20px;
+                   box-sizing: border-box;
+                   box-shadow: 1px 1px 0 0 darkgray;
+                   margin-bottom: 20px;
+                   position:relative;
+                   background-color: white;    
+                   .title_nav{
+                     font-size: 1.2rem;
+                     font-weight: 900;
+                     margin: 0;
+                   }
+                 }
+               }
 }
 
 //TABLET PORTRAIT & LANDSCAPE
-@media screen and (max-width: 1024px){
-    
+@media screen and (max-width: 1024px) and (min-width:600px){
+    #restaurant_cards{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 20vh 1fr 1fr;
+        flex-wrap: wrap;
+        padding-bottom: 4rem;
+        gap: 20px;   
+        @include mp-rest-cards;
+    } 
+    label{
+    position: relative;
+    bottom: 9em;
+    left: 1em;
+    }
 }
 
 //DESKTOP MEDIUM & LARGE SCREEN
-@media screen and (max-width: 1920px){
+@media screen and (max-width: 1920px) and (min-width: 1025px){
     
 }
