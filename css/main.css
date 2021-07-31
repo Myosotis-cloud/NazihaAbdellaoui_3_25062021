@@ -121,6 +121,7 @@ body {
 
 .txt-menu:hover .btn-freshmint {
   transform: translate(-100px, 0);
+  transition: all 0.2s ease;
   width: 60px;
   height: auto;
   border-radius: 0 20px 20px 0;
@@ -134,7 +135,7 @@ body {
   margin-left: 20px;
   overflow: hidden;
   height: auto;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .rotate {
@@ -144,22 +145,26 @@ body {
   font-size: 1.3rem;
   width: 60px;
   text-align: center;
-  height: 10vh;
-  line-height: 10vh;
+  height: 12vh;
+  line-height: 12vh;
 }
 
+.txt-menu:hover .rotate {
+  animation: rotatebtn ease 1s 1;
+}
+
+@keyframes rotatebtn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 .btn__check {
   transition: 2.5s;
   width: 60px;
-  transition: rotate 5s ease-in-out;
-}
-
-.btn-freshmint:hover {
-  -o-transform: rotate(720deg);
-  -ms-transform: rotate(720deg);
-  -moz-transform: rotate(720deg);
-  -webkit-transform: rotate(720deg);
-  transform: rotate(720deg);
+  transition: all 0.5s ease;
 }
 
 .proj-layout {
@@ -473,7 +478,7 @@ input::placeholder {
 .i-heart:hover {
   background: linear-gradient(#ff79da, #9356dc);
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
+  background-clip: text;
   opacity: 1;
   z-index: 999;
 }
@@ -559,6 +564,9 @@ strong {
 .titre-coeur h1, .titre-coeur .i-heart {
   display: inline-flex;
   border: none;
+  align-items: center;
+  margin-right: 20px;
+  background-color: transparent;
 }
 
 .entry-contenair {
@@ -579,6 +587,7 @@ strong {
 .titre-menu {
   font-family: "Shrikhand", sans-serif;
   padding-left: 20px;
+  font-size: 1.5em;
 }
 
 .welcome_img {
