@@ -17,52 +17,52 @@ height: 30px;
       background: linear-gradient($color-secondary-lighten, $color-primary-lighten);
     }
   }
-  
+
   .btn-explorer {
     @include btn-explorer;
     }
 
 //ANIMATION PAGE MENU - BTN VERT+ROTATE
-.btn-freshmint{
-    width: 0;
-    color: transparent;
-    margin-right: -100px;
-    margin-left: 20px;
-    overflow: hidden;
+.txt-menu{
+  &:hover .btn-freshmint{
+    transform: translate(-100px, 0);
+    width: $width;
     height: auto;
-    transition: transform 1s ease-in-out;
+    border-radius: 0 20px 20px 0;
+    background-color: $color-third;
   }
-  
-    .txt-menu:hover .btn-freshmint{
-      transform: translate(-100px, 0);
-      width: $width;
-      height: auto;
-      border-radius: 0 20px 20px 0;
-      background-color: $color-third;
-    }
+}
+.btn-freshmint{
+  width: 0;
+  color: transparent;
+  margin-right: -100px;
+  margin-left: 20px;
+  overflow: hidden;
+  height: auto;
+  transition: transform 1s ease-in-out;
+}
 
-  .txt-menu:hover + .check__anim{
-      .btn__anim{
-        transform: rotate(-360deg);
-        transition: transform 1s ease-in-out;
-      }
-  }
-  
-  .check__anim{
-    display: flex;
-    justify-content: center;
-  }
-    .btn__check{
-        text-align: center;
-        height: 18vh;
-        line-height: 18vh;
-        overflow: hidden;
-    }
-    .btn__check--custom{
-        color: #fff;
-        background-color: $color-third;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 1.5rem;
-      }
- 
+.rotate{
+    color: #fff;
+    background-color: $color-third;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    width: 60px;
+    text-align: center;
+    height: 10vh;
+    line-height: 10vh;
+}
+
+.btn__check{
+  transition: 2.5s;
+  width: 60px;
+  transition: rotate 5s ease-in-out;
+}
+
+.btn-freshmint:hover {
+  -o-transform:rotate(720deg);
+  -ms-transform:rotate(720deg);
+  -moz-transform:rotate(720deg);
+  -webkit-transform:rotate(720deg);
+  transform:rotate(720deg);
+}

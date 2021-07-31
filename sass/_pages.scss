@@ -1,3 +1,5 @@
+//PAGE ACCUEIL
+
 //SECTION TITRES+BTN PAGE ACCUEIL
 .introduction {
     font-family: "Roboto", sans-serif;
@@ -101,7 +103,6 @@ h4{
   }
 
   //MENU NAV PAGE ACCUEIL
-
   .nav_main{
     display: flex;
     flex-direction: column;
@@ -164,12 +165,6 @@ h4{
 }
 
 //SECTION CARTES RESTAURANT PAGE ACCUEIL
-
-        
-      
-    
-  
-  
   .__card{
     background-color: white;
     border-radius: 20px;
@@ -185,7 +180,6 @@ h4{
           margin-top: 0;
           font-size: 1.3rem;
             + .pargph{
-             
               margin: 0;
               font-size: 1.1rem;
             }
@@ -198,12 +192,18 @@ h4{
       align-items: center;
     }
     .i-heart{
+    opacity: 1;
     font-size: 2rem;
     color: rgb(90, 87, 87);
       &:hover{
-        color: blueviolet;
+        background: linear-gradient(#ff79da, #9356dc);
+       -webkit-text-fill-color: transparent;
+       -webkit-background-clip: text;
+        opacity: 1;
+        z-index: 999;
       }
     }
+
 //LABEL      
 label{
     background-color: $color-third;
@@ -220,16 +220,29 @@ label{
     right: 1em;
 }
 
+
+
+
+/* ********************************PAGE MENU******************** */
+
+//SECTION ENTREES/PLATS/DESSERT
+
+.entry-contenair, .dish-contenair, .dessert-contenair{
+  display:grid;
+  grid-template-columns: 100%;
+  margin: 0;
+}
+
 //PAGE MENU
 .enchante, .dish, .pudding{
-    @include menu-card-typo;
+  @extend %menu-card-typo;
     > .txt-card{
       flex: 1;
       display: flex;
       justify-content: center;
       flex-direction: column;
       min-width: 0;
-      
+      margin-right: 20px;
       h3{
         margin: 0;
         font-size: 1.2rem;
@@ -237,15 +250,24 @@ label{
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 100%;
+        width: calc(100%);
+        transition: all 0.2s ease-out;
+          &:hover,
+          &:focus{
+            color: $color-third;
+            }
+
         + p{
           font-size: 0.9rem;
           margin: 0;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          width: 100%;
+          width: calc(90%);
           display: block;
+          .pargph, strong{
+            display: inline-flex;
+          }
         }
       }
     }
@@ -253,20 +275,29 @@ label{
   
   strong{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     margin-right: 100px;
+    flex-direction: column;
+    padding-bottom: 20px;
   }
 
-  .menu_main{
+  .wrapper{
+    display: flex;
+    flex-direction: column;
     background-color: $bgc;
     border-radius: 40px 40px 0 0;
     padding-left: 2%;
     padding-right: 2%;
     margin-top: -30px;
+  }
+  .titre-coeur{
+    display: inline-flex;
+    justify-content: space-between;
     h1, .i-heart{
       display: inline-flex;
+      border: none;
     }
+
   }
   
   .entry-contenair{
@@ -277,13 +308,8 @@ label{
       @include subtitle-h2-menu;
     }
   
-  .txt-card, strong{
-    display: inline-block;
-  }
-  
   .titre-menu{
       font-family: 'Shrikhand',sans-serif;
-      font-size: 1.3rem;
       padding-left: 20px;
     }
 
