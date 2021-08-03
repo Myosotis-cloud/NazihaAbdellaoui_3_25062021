@@ -6,18 +6,21 @@
         display: flex;
         width: 100%;
         flex-direction: column;
+        padding-bottom: 4rem;
          @include mp-rest-cards;
              .__card{
-                   grid-column: 1 / 2;
-                   grid-row: 2 / span 6;
-                   text-decoration: none;
-                   color: black;
-                   border-radius: 20px 20px 20px 20px;
-                   box-sizing: border-box;
-                   box-shadow: 1px 1px 0 0 darkgray;
-                   margin-bottom: 20px;
-                   position:relative;
-                   background-color: white;    
+              /*grid-column: 1/2;*/
+              /* grid-row: 2/span 6; */
+              text-decoration: none;
+              color: black;
+              border-radius: 20px 20px 0 0;
+              /* box-sizing: border-box; */
+              /* box-shadow: 1px 1px 0 0 darkgrey; */
+              margin-bottom: 20px;
+              position: relative;
+              background-color: white;
+              margin: 0;
+              /*margin-top: 2em;*/
                    .title_nav{
                      font-size: 1.2rem;
                      font-weight: 900;

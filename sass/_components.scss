@@ -26,11 +26,14 @@ height: 30px;
 .txt-menu{
   &:hover .btn-freshmint{
     transform: translate(-100px, 0);
-    transition: all 0.2s ease;
+    transition: all 1s ease;
     width: $width;
     height: auto;
     border-radius: 0 20px 20px 0;
     background-color: $color-third;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 .btn-freshmint{
@@ -47,7 +50,7 @@ height: 30px;
     color: #fff;
     background-color: $color-third;
     border-radius: 50%;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     width: 60px;
     text-align: center;
     height: 12vh;
@@ -56,6 +59,7 @@ height: 30px;
 
 .txt-menu:hover .rotate{
   animation: rotatebtn ease 1s 1;
+  animation-delay: 0.5s;
 }
 
 @keyframes rotatebtn{
@@ -67,8 +71,10 @@ height: 30px;
   }
 }
 
-.btn__check{
+/*.btn__check{
   transition: 2.5s;
   width: 60px;
   transition: all 0.5s ease;
-}
+}*/
+
+//ANIMATION DU COEUR

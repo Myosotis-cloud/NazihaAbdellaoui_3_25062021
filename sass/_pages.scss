@@ -42,7 +42,7 @@ h4{
 
   .search_bare{
     width: 100%;
-    box-shadow: 0 1px 4px #808080;
+    box-shadow: 4px -1px 2px 1px darkgrey;
   }
 
 
@@ -165,9 +165,9 @@ h4{
 }
 
 //SECTION CARTES RESTAURANT PAGE ACCUEIL
-  .__card{
+  .description_card{
     background-color: white;
-    border-radius: 20px;
+    border-radius: 0 0 20px 20px;
     box-shadow: 0 0 6px 2px darkgray;
   }
 
@@ -179,29 +179,20 @@ h4{
           margin-bottom: 0;
           margin-top: 0;
           font-size: 1.3rem;
-            + .pargph{
-              margin: 0;
-              font-size: 1.1rem;
-            }
         }
       }
     }
+
+.pargph{
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+
     .description_card, .i-heart{
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .i-heart{
-    opacity:1;
-    font-size: 2rem;
-    color: rgb(90, 87, 87);
-      &:hover{
-        background: linear-gradient(#ff79da, #9356dc);
-       -webkit-text-fill-color: transparent;
-       background-clip: text;
-        opacity: 1;
-        z-index: 999;
-      }
     }
 
 //LABEL      
@@ -243,6 +234,8 @@ label{
       flex-direction: column;
       min-width: 0;
       margin-right: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px;
       h3{
         margin: 0;
         font-size: 1.2rem;
@@ -265,20 +258,21 @@ label{
           text-overflow: ellipsis;
           width: calc(90%);
           display: block;
-          .pargph, strong{
-            display: inline-flex;
-          }
         }
       }
     }
   }
-  
+
+  .pargph, strong{
+  display: flex;
+  }
+
   strong{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-right: 100px;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 
   .wrapper{
@@ -286,8 +280,8 @@ label{
     flex-direction: column;
     background-color: $bgc;
     border-radius: 40px 40px 0 0;
-    padding-left: 2%;
-    padding-right: 2%;
+    //padding-left: 2%;
+    //padding-right: 2%;
     margin-top: -30px;
   }
   .titre-coeur{
@@ -298,12 +292,76 @@ label{
     border: none;
     align-items: center;
     margin-right: 20px;
-    background-color: transparent;
+    }
+  }
 
 
+.i-heart {
+  fill: transparent;
+  stroke: $color-secondary;
+  stroke-width: 20;
+  position: relative;
+  font-size: 1.5rem;
+  width: 2em;
+  justify-content: center;
+  
+    svg{
+      overflow: visible;
+      width: 10rem;
+    }
+
+    .heart-background{
+      position: absolute;
+      stroke: none;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+    .heart-main:hover path{
+      animation: stroke-animation 4s ease-in-out forwards;
+    }
+
+    .heart-main:hover .heart-background path{
+      animation: fade-animation 4s ease-in-out forwards;
     }
 
   }
+    
+
+
+
+@keyframes stroke-animation{
+  0%{
+    fill: transparent;
+    transform: scale(1);
+  }
+  30%{
+    fill: $color-secondary;
+    transform: scale(1.1);
+  }
+  60%{
+    fill: $color-secondary;
+    transform: scale(1);
+  }
+  80%{
+    fill: $color-secondary;
+    transform: scale(1.1);
+  }
+  100%{
+    fill: $color-secondary;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-animation{
+  0%{
+    fill: $color-secondary;
+  }
+  100%{
+    fill: $color-secondary;
+  }
+}
   
   .entry-contenair{
     width: 100%;
@@ -320,11 +378,11 @@ label{
 }
 
 //MISE EN PAGE PHOTO PAGE ACCUEIL
-    .welcome_img {
-        -o-object-fit: cover;
-        object-fit: cover;
-        width: 100%;
-        height: 150px;
-        border-radius: 20px 20px 0 0;
-      }
+.welcome_img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  border-radius: 20px 20px 0 0;
+}
 
