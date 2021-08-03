@@ -78,3 +78,9 @@ height: 30px;
 }*/
 
 //ANIMATION DU COEUR
+.main-stop {
+  stop-color: $color-secondary;
+}
+.alt-stop {
+  stop-color: $color-primary;
+}

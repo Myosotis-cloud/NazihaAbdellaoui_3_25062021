@@ -38,7 +38,9 @@
 h4{
 @include title-h4-accueil;
 }
-
+.subtitle-menu-card{
+  @include subtitle-h2-menu;
+}
 
   .search_bare{
     width: 100%;
@@ -280,13 +282,15 @@ label{
     flex-direction: column;
     background-color: $bgc;
     border-radius: 40px 40px 0 0;
-    //padding-left: 2%;
-    //padding-right: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
     margin-top: -30px;
   }
   .titre-coeur{
     display: inline-flex;
     justify-content: space-between;
+    font-family: 'Shrikhand',sans-serif;
+    margin-left: 20px;
     h1, .i-heart{
     display: inline-flex;
     border: none;
@@ -298,17 +302,19 @@ label{
 
 .i-heart {
   fill: transparent;
-  stroke: $color-secondary;
-  stroke-width: 20;
+  stroke: rgb(70, 67, 67);
+  stroke-width: 30;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 2rem;
   width: 2em;
   justify-content: center;
-  
-    svg{
-      overflow: visible;
-      width: 10rem;
-    }
+
+svg{
+  overflow: visible;
+}
+path{
+  fill-opacity: 0;
+}
 
     .heart-background{
       position: absolute;
@@ -319,63 +325,57 @@ label{
     }
 
     .heart-main:hover path{
-      animation: stroke-animation 4s ease-in-out forwards;
+      animation: stroke-animation 1s ease-in-out forwards;
     }
 
     .heart-main:hover .heart-background path{
-      animation: fade-animation 4s ease-in-out forwards;
+      animation: fade-animation 1s ease-in-out forwards;
     }
 
   }
-    
-
-
 
 @keyframes stroke-animation{
   0%{
-    fill: transparent;
+    //fill: transparent;
+    fill-opacity: 0;
+    stroke: none;
     transform: scale(1);
   }
   30%{
-    fill: $color-secondary;
+    fill: "url(#gradient)";
+    stroke: "url(#gradient)";
+    fill-opacity: .30;
     transform: scale(1.1);
   }
   60%{
-    fill: $color-secondary;
+    fill: "url(#gradient)";
+    stroke: none;
+    fill-opacity: .60;
     transform: scale(1);
   }
   80%{
-    fill: $color-secondary;
+    fill: "url(#gradient)";
+    stroke: none;
+    fill-opacity: .80;
     transform: scale(1.1);
   }
   100%{
-    fill: $color-secondary;
+    fill: "url(#gradient)";
+    stroke: none;
+    fill-opacity: 1;
     transform: scale(1);
   }
 }
 
 @keyframes fade-animation{
   0%{
-    fill: $color-secondary;
+    fill: "url(#gradient)";
   }
   100%{
-    fill: $color-secondary;
+    fill: "url(#gradient)";
   }
 }
   
-  .entry-contenair{
-    width: 100%;
-  }
-  
-.subtitle-menu-card{
-  @include subtitle-h2-menu;
-}
-  
-.titre-menu{
-  font-family: 'Shrikhand',sans-serif;
-  padding-left: 20px;
-  font-size: 1.5em;
-}
 
 //MISE EN PAGE PHOTO PAGE ACCUEIL
 .welcome_img {
