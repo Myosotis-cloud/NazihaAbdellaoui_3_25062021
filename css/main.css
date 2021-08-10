@@ -622,16 +622,15 @@ strong {
   }
 
   input {
-    line-height: 60px;
-    right: 1.3em;
-    height: 60px;
+    line-height: 58px;
+    height: 58px;
     text-align: center;
-    border: transparent;
-    width: 80%;
-    border-radius: 40%;
+    border-radius: 40px;
     background: transparent;
     display: inline-block;
-    flex: 1 1;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 3px 2px black;
   }
 
   input::-webkit-input-placeholder {
@@ -640,6 +639,11 @@ strong {
     opacity: 1;
     font-family: "roboto", sans-serif;
     font-weight: 500;
+    font-size: 1rem;
+  }
+
+  input::placeholder {
+    color: white;
     font-size: 1rem;
   }
 
