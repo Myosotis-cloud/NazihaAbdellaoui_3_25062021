@@ -6,15 +6,7 @@
 }
 
 
-//HEADER ACCUEIL
-.header {
-    @include heading;
-    box-shadow: 0 1px 4px grey;
-    border-bottom: 2px solid #f4f4f4;
-      a img {
-        width: 160px;
-      }
-  }
+
   
   //HEADER MENU
   .header--menu{
@@ -30,7 +22,7 @@
         box-shadow: 0 1px 4px grey;
         border-bottom: 2px solid #f4f4f4;
         height: 65px;
-        > .fleche_menu{
+        .fleche_menu{
           position: relative;
           font-size: 1.8rem;
           color: rgb(63, 60, 60);
@@ -38,27 +30,7 @@
       }
   }
 
-  //FOOTER
-  
-  
-  .footer-list {
-    font-family: "roboto", sans-serif;
-    list-style-type: none;
-    margin: 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    & a{
-      text-decoration: none;
-      color: white;
-      flex-direction: column;
-      & span{
-        position: absolute;
-        margin-left: 15px;
-      }
-    }
-  }
-
+ 
 .i-foot, .txt-foot{
 display: inline-flex;
 }

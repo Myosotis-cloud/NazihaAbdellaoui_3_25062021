@@ -34,7 +34,7 @@
   
   @mixin subtitle-h2-accueil{
     font-family: 'Roboto',sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     font-size: $subtitle-h2;
     padding-top: 3rem;
   }
@@ -55,8 +55,8 @@
   @mixin heading {
     display: flex;
     justify-content: center;
-    line-height: 60px;
-    height: 60px;
+    line-height: 80px;
+    height: 80px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -79,8 +79,8 @@
   @mixin txt-card-accueil {
     font-family: 'Roboto',sans-serif;
     padding-left: 15px;
-    padding-bottom: 20px;
-    padding-top: 10px;
+    //padding-bottom: 20px;
+    //padding-top: 10px;
     margin-bottom: 20px;
     }
 

@@ -1,108 +1,6 @@
-//PAGE ACCUEIL
-
-//SECTION TITRES+BTN PAGE ACCUEIL
-.introduction {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #f2f2f2;
-    //padding-bottom: 50px;
-      > .input-container {
-        position: relative;
-        font-family: "Roboto", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-        width: 100%;
-          > .input_icon {
-            position: absolute;
-            padding-right: 8em;
-              > .head-titles {
-                font-family: "roboto", sans-serif;
-                display: block;
-                text-align: center;
-                line-height: normal;
-                .title_main {
-                  @include h1;
-                    
-                }
-              }
-          }
-      }
-  }       
-
-h4{
-@include title-h4-accueil;
-}
-.subtitle-menu-card{
-  @include subtitle-h2-menu;
-}
-
-  .search_bare{
-    width: 100%;
-    box-shadow: 4px -1px 2px 1px darkgrey;
-  }
 
 
-  input {
-    line-height: 40px;
-    height: 40px;
-    text-align: center;
-    border: none;
-    width: 100%;
-    background-color: hsl(0, 0%, 82.7%);
-    display: inline-block;
-    flex: 1 1;
-  }
-  
-  input::-webkit-input-placeholder {
-    text-align: center;
-    color: black;
-    opacity: 1;
-    font-family: "roboto", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-  }
-  
-  input::-moz-placeholder {
-    text-align: center;
-    color: black;
-    opacity: 1;
-    font-family: "roboto", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-  }
-  
-  input:-ms-input-placeholder {
-    text-align: center;
-    color: black;
-    opacity: 1;
-    font-family: "roboto", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-  }
-  
-  input::-ms-input-placeholder {
-    text-align: center;
-    color: black;
-    opacity: 1;
-    font-family: "roboto", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-  }
-  
-  input::placeholder {
-    text-align: center;
-    color: black;
-    opacity: 1;
-    font-family: "roboto", sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-  }
+
 
   //MENU NAV PAGE ACCUEIL
 .subtitle-accueil{
@@ -113,25 +11,12 @@ h4{
   .description_card{
     background-color: white;
     border-radius: 0 0 20px 20px;
-    box-shadow: 0 0 6px 2px darkgray;
+    box-shadow: 1px 1px 6px 2px darkgray;
   }
-
-  //TXT CARTES PAGES ACCUEIL
-  .description_card{
-    @include txt-card-accueil;
-    height: 80px;
-      > .des-txt{
-        h3{
-          margin-bottom: 0;
-          margin-top: 0;
-          font-size: 1.3rem;
-        }
-      }
-    }
 
 .pargph{
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 
@@ -142,7 +27,7 @@ h4{
     }
 
 //LABEL      
-label{
+/*label{
     background-color: $color-third;
     width: 100px;
     color: $color-darken;
@@ -155,7 +40,7 @@ label{
     position: absolute;
     bottom: 7em;
     right: 1em;
-}
+}*/
 
 
 
@@ -248,6 +133,7 @@ label{
     font-family: 'Shrikhand',sans-serif;
     margin-left: 20px;
     h1, .i-heart{
+    color: $txt-color;
     display: inline-flex;
     border: none;
     align-items: center;
