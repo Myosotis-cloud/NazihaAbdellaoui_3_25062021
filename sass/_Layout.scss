@@ -1,45 +1,41 @@
-
 .proj-layout {
   display: grid;
   grid-template-columns: 100%;
   margin: auto;
 }
 
-
-
-  
-  //HEADER MENU
-  .header--menu{
+//HEADER MENU
+.header--menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > .logo-nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-      > .logo-nav{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background: white;
-        width: 100%;
-        box-shadow: 0 1px 4px grey;
-        border-bottom: 2px solid #f4f4f4;
-        height: 65px;
-        .fleche_menu{
-          position: relative;
-          font-size: 1.8rem;
-          color: rgb(63, 60, 60);
-        }
-      }
+    background: white;
+    width: 100%;
+    box-shadow: 0 1px 4px grey;
+    border-bottom: 2px solid #f4f4f4;
+    height: 65px;
+    .fleche_menu {
+      position: relative;
+      font-size: 1.8rem;
+      color: rgb(63, 60, 60);
+    }
   }
-
- 
-.i-foot, .txt-foot{
-display: inline-flex;
 }
 
-.i-hands{
-transform: perspective(150px) rotateZ(125deg);
-font-size: 0.8rem;
+.i-foot,
+.txt-foot {
+  display: inline-flex;
 }
 
-i.ustensils{
+.i-hands {
+  transform: perspective(150px) rotateZ(125deg);
+  font-size: 0.8rem;
+}
+
+i.ustensils {
   font-size: 0.8rem;
 }

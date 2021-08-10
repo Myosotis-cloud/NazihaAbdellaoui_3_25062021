@@ -1,4 +1,4 @@
-//body
+//CORPS DU SITE WEB
 html,
 body {
   height: 100%;
@@ -12,9 +12,8 @@ body {
   box-sizing: border-box;
 }
 
-:any-link{
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-  }
-  
+:any-link {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}

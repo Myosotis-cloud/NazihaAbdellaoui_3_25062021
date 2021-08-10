@@ -1,31 +1,34 @@
 //IMG COUVERTURE PAGE MENU
-.cover_img{
-height: 300px;
-object-fit: cover;
-width: 100%;
+.cover_img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
 }
 
-.logo-nav a img{
-width: 200px;
-height: 30px;
+.logo-nav a img {
+  width: 200px;
+  height: 30px;
 }
 //BOUTON ROSE DEGRADE
 .btn {
-    @extend %typography;
-    &:hover {
-      transform: scale(1.15);
-      background: linear-gradient($color-secondary-lighten, $color-primary-lighten);
-      box-shadow: 1px 4px 2px $color-primary;
-    }
+  @extend %typography;
+  &:hover {
+    transform: scale(1.15);
+    background: linear-gradient(
+      $color-secondary-lighten,
+      $color-primary-lighten
+    );
+    box-shadow: 1px 4px 2px $color-primary;
   }
+}
 
-  .btn-explorer {
-    @include btn-explorer;
-    }
+.btn-explorer {
+  @include btn-explorer;
+}
 
 //ANIMATION PAGE MENU - BTN VERT+ROTATE
-.txt-menu{
-  &:hover .btn-freshmint{
+.txt-menu {
+  &:hover .btn-freshmint {
     transform: translate(-100px, 0);
     transition: all 1s ease;
     width: $width;
@@ -37,7 +40,7 @@ height: 30px;
     flex-direction: column;
   }
 }
-.btn-freshmint{
+.btn-freshmint {
   width: 0;
   color: transparent;
   margin-right: -100px;
@@ -47,39 +50,38 @@ height: 30px;
   transition: transform 0.5s ease-in-out;
 }
 
-.rotate{
-    color: #fff;
-    background-color: $color-third;
-    border-radius: 50%;
-    font-size: 1.4rem;
-    width: 60px;
-    text-align: center;
-    height: 12vh;
-    line-height: 12vh;
+.rotate {
+  color: #fff;
+  background-color: $color-third;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  width: 60px;
+  text-align: center;
+  height: 12vh;
+  line-height: 12vh;
 }
 
-.txt-menu:hover .rotate{
+.txt-menu:hover .rotate {
   animation: rotatebtn ease 1s 1;
   animation-delay: 0.5s;
 }
 
-@keyframes rotatebtn{
-  0%{
+@keyframes rotatebtn {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(-360deg);
   }
 }
 
-//ANIMATION DU COEUR
+//********ANIMATION DU COEUR ***** DEBUT *****
 .main-stop {
   stop-color: $color-secondary;
 }
 .alt-stop {
   stop-color: $color-primary;
 }
-
 
 .i-heart {
   fill: transparent;
@@ -90,57 +92,56 @@ height: 30px;
   width: 2em;
   justify-content: center;
 
-svg{
-  overflow: visible;
-}
-path{
-  fill-opacity: 0;
-}
-
-    .heart-background{
-      position: absolute;
-      stroke: none;
-      left: 0;
-      right: 0;
-      z-index: -1;
-    }
-
-    .heart-main:hover path{
-      animation: stroke-animation 1s ease-in-out forwards;
-    }
-
-    .heart-main:hover .heart-background path{
-      animation: fade-animation 1s ease-in-out forwards;
-    }
-
+  svg {
+    overflow: visible;
+  }
+  path {
+    fill-opacity: 0;
   }
 
-@keyframes stroke-animation{
-  0%{
+  .heart-background {
+    position: absolute;
+    stroke: none;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .heart-main:hover path {
+    animation: stroke-animation 1s ease-in-out forwards;
+  }
+
+  .heart-main:hover .heart-background path {
+    animation: fade-animation 1s ease-in-out forwards;
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
     //fill: transparent;
     fill-opacity: 0;
     stroke: none;
     transform: scale(1);
   }
-  30%{
+  30% {
     fill: "url(#gradient)";
     stroke: "url(#gradient)";
-    fill-opacity: .30;
+    fill-opacity: 0.3;
     transform: scale(1.1);
   }
-  60%{
+  60% {
     fill: "url(#gradient)";
     stroke: none;
-    fill-opacity: .60;
+    fill-opacity: 0.6;
     transform: scale(1);
   }
-  80%{
+  80% {
     fill: "url(#gradient)";
     stroke: none;
-    fill-opacity: .80;
+    fill-opacity: 0.8;
     transform: scale(1.1);
   }
-  100%{
+  100% {
     fill: "url(#gradient)";
     stroke: none;
     fill-opacity: 1;
@@ -148,41 +149,132 @@ path{
   }
 }
 
-@keyframes fade-animation{
-  0%{
+@keyframes fade-animation {
+  0% {
     fill: "url(#gradient)";
   }
-  100%{
+  100% {
     fill: "url(#gradient)";
   }
 }
-
-@keyframes slideDown{
-  0%{
+//************* FIN ANIMATION COEUR ******************
+//************* APPARITION PROGRESSIVE DES CARTES DES MENUS ******
+@keyframes slideDown {
+  0% {
     transform: translateY(300px);
     opacity: 0;
   }
-  100%{
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
 //animation logo header page accueil
-@keyframes gonfle{
-  0%{
+@keyframes gonfle {
+  0% {
     transform: scale(1);
   }
-  30%{
+  30% {
     transform: scale(1.1);
   }
-  60%{
+  60% {
     transform: scale(1.2);
   }
-  80%{
+  80% {
     transform: scale(1.3);
   }
-  100%{
+  100% {
     transform: scale(1.4);
   }
 }
+
+/* ****LOADER SPINNER**** */
+@keyframes loader-spinner {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.loader-spinner {
+  animation: loader-spinner 3s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  background: rgba(10, 10, 10, 0.6);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  z-index: 999;
+  img {
+    height: 10vh;
+    position: relative;
+    top: 15em;
+    opacity: 0.4;
+    max-width: 100%;
+  }
+}
+
+.loader {
+  display: inline-block;
+  position: relative;
+  top: 15em;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border: 4px solid transparent;
+  border-top-color: #ff79da;
+  animation: loader 2s infinite;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.loader__cover {
+  position: relative;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.loader__bar {
+  animation: loader 2s infinite;
+  position: absolute;
+  left: 0;
+  top: 5em;
+  border-radius: 100%;
+  width: 50%;
+  height: 50%;
+  transform-origin: 100% 100%;
+}
+
+.loader::before {
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #ff79da;
+  animation: loader 2s infinite;
+}
+
+.loader::before {
+  content: "";
+}
+
