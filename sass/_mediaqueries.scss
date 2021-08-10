@@ -1,5 +1,8 @@
 //MOBILE FIRST
 //@media screen and (max-width: 620px) and (min-width: 280px)
+.loader{
+animation: none;
+}
 .header {
   @include heading;
   box-shadow: 0 1px 4px grey;
