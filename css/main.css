@@ -76,16 +76,16 @@
   text-align: center;
   line-height: normal;
 }
-.introduction > .input-container > .input_icon > .head-titles .title_main {
+
+h1 {
   font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 900;
   flex-wrap: wrap;
+  margin-top: 0;
   margin-bottom: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 20px;
   width: 100%;
+  color: #3f3c3c;
 }
 
 h4 {
@@ -594,17 +594,6 @@ strong {
     color: white;
   }
 
-  .title_main {
-    font-family: "Roboto", sans-serif;
-    font-size: 2rem;
-    font-weight: 900;
-    flex-wrap: wrap;
-    margin-top: 0;
-    margin-bottom: 15px;
-    width: 100%;
-    color: #3f3c3c;
-  }
-
   h4 {
     font-size: 1.5rem;
     font-weight: 500;
@@ -842,7 +831,7 @@ strong {
   }
 
   strong {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
 }
 html,
@@ -1263,13 +1252,14 @@ i.ustensils {
   font-family: "Shrikhand", sans-serif;
   margin-left: 20px;
 }
-.titre-coeur h1,
+.titre-coeur h2,
 .titre-coeur .i-heart {
   color: #3f3c3c;
   display: inline-flex;
   border: none;
   align-items: center;
   margin-right: 20px;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
