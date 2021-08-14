@@ -445,7 +445,7 @@ strong {
   #restaurant_cards .__card {
     border-radius: 20px;
     padding-bottom: 0;
-    height: 37vh;
+    height: 36vh;
   }
   #restaurant_cards .__card:hover {
     box-shadow: 1px 2px 5px 3px darkgray;
@@ -1152,7 +1152,7 @@ i.ustensils {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 /* ********************************PAGE MENU******************** */
