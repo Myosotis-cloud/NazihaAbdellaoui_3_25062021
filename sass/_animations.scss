@@ -75,86 +75,70 @@
 }
 
 //********ANIMATION DU COEUR ***** DEBUT *****
-.main-stop {
-  stop-color: $color-secondary;
-}
-.alt-stop {
-  stop-color: $color-primary;
-}
 
-#i-heart {
-  fill: transparent;
-  stroke: rgb(70, 67, 67);
-  stroke-width: 30;
+.i-heart{
   position: relative;
-  font-size: 2rem;
-  width: 2em;
-  justify-content: center;
-
-  svg {
-    overflow: visible;
-  }
-  path {
-    fill-opacity: 0;
-  }
-
-  .heart-background {
-    position: absolute;
-    stroke: none;
+  margin-right: 22px;
+  margin-top: 4px;
+  .heart-background{
     left: 0;
-    right: 0;
-    z-index: -1;
+    opacity: 0;
+    position: absolute;
+  }
+}
+
+  .i-heart i{
+    color: gray;
+    font-size: 2rem;
+    padding: .2rem;
   }
 
-  .heart-main:hover path {
+.i-heart:hover {
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 1;
+}
+.i-heart .heart-background, .i-heart:hover, .i-heart .heart-main:hover{
+  transition: all 1s ease-in-out;
+}
+
+  .i-heart .heart-background:hover {
+    background: linear-gradient($color-primary, $color-secondary);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    opacity: 1;
+    z-index: 999;
     animation: stroke-animation 1s ease-in-out forwards;
   }
 
-  .heart-main:hover .heart-background path {
-    animation: fade-animation 1s ease-in-out forwards;
-  }
-}
-
 @keyframes stroke-animation {
   0% {
-    fill-opacity: 0.1;
-    stroke: none;
+    opacity: 0.1;
+    background: transparent;
     transform: scale(1);
   }
   30% {
-    fill: "url(#gradient)"!important;
-    stroke: "url(#gradient)"!important;
-    fill-opacity: 0.3;
-    transform: scale(1.1);
+    background: linear-gradient ($color-primary, $color-secondary);
+    opacity: 0.3;
+    transform: scale(1.2);
   }
   60% {
-    fill: "url(#gradient)"!important;
-    stroke: none;
-    fill-opacity: 0.6;
+    background: linear-gradient ($color-primary, $color-secondary);
+    opacity: 0.6;
     transform: scale(1);
   }
   80% {
-    fill: "url(#gradient)"!important;
-    stroke: none;
-    fill-opacity: 0.8;
-    transform: scale(1.1);
+    background: linear-gradient ($color-primary,$color-secondary);
+    opacity: 0.8;
+    transform: scale(1.2);
   }
   100% {
-    fill: "url(#gradient)"!important;
-    stroke: none;
-    fill-opacity: 1;
+    background-color: linear-gradient ($color-primary,$color-secondary);
+    opacity: 1;
     transform: scale(1);
   }
 }
 
-@keyframes fade-animation {
-  0% {
-    fill: "url(#gradient)"!important;
-  }
-  100% {
-    fill: "url(#gradient)"!important;
-  }
-}
 //************* FIN ANIMATION COEUR ******************
 //************* APPARITION PROGRESSIVE DES CARTES DES MENUS ******
 @keyframes slideDown {

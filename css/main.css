@@ -710,7 +710,6 @@ strong {
   #restaurant_cards .__card:hover {
     box-shadow: 5px 6px 5px 3px #a9a9a9;
     border-radius: 20px;
-    height: 36vh;
   }
   #restaurant_cards .__card .title_nav {
     font-size: 1rem;
@@ -898,80 +897,67 @@ body {
     transform: rotate(-360deg);
   }
 }
-.main-stop {
-  stop-color: #ff79da;
-}
-
-.alt-stop {
-  stop-color: #9356DC;
-}
-
-#i-heart {
-  fill: transparent;
-  stroke: #464343;
-  stroke-width: 30;
+.i-heart {
   position: relative;
-  font-size: 2rem;
-  width: 2em;
-  justify-content: center;
+  margin-right: 22px;
+  margin-top: 4px;
 }
-#i-heart svg {
-  overflow: visible;
-}
-#i-heart path {
-  fill-opacity: 0;
-}
-#i-heart .heart-background {
-  position: absolute;
-  stroke: none;
+.i-heart .heart-background {
   left: 0;
-  right: 0;
-  z-index: -1;
+  opacity: 0;
+  position: absolute;
 }
-#i-heart .heart-main:hover path {
+
+.i-heart i {
+  color: gray;
+  font-size: 2rem;
+  padding: 0.2rem;
+}
+
+.i-heart:hover {
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.i-heart .heart-background, .i-heart:hover, .i-heart .heart-main:hover {
+  transition: all 1s ease-in-out;
+}
+
+.i-heart .heart-background:hover {
+  background: linear-gradient(#9356DC, #ff79da);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  opacity: 1;
+  z-index: 999;
   animation: stroke-animation 1s ease-in-out forwards;
-}
-#i-heart .heart-main:hover .heart-background path {
-  animation: fade-animation 1s ease-in-out forwards;
 }
 
 @keyframes stroke-animation {
   0% {
-    fill-opacity: 0.1;
-    stroke: none;
+    opacity: 0.1;
+    background: transparent;
     transform: scale(1);
   }
   30% {
-    fill: "url(#gradient)" !important;
-    stroke: "url(#gradient)" !important;
-    fill-opacity: 0.3;
-    transform: scale(1.1);
+    background: linear-gradient #9356DC, #ff79da;
+    opacity: 0.3;
+    transform: scale(1.2);
   }
   60% {
-    fill: "url(#gradient)" !important;
-    stroke: none;
-    fill-opacity: 0.6;
+    background: linear-gradient #9356DC, #ff79da;
+    opacity: 0.6;
     transform: scale(1);
   }
   80% {
-    fill: "url(#gradient)" !important;
-    stroke: none;
-    fill-opacity: 0.8;
-    transform: scale(1.1);
+    background: linear-gradient #9356DC, #ff79da;
+    opacity: 0.8;
+    transform: scale(1.2);
   }
   100% {
-    fill: "url(#gradient)" !important;
-    stroke: none;
-    fill-opacity: 1;
+    background-color: linear-gradient #9356DC, #ff79da;
+    opacity: 1;
     transform: scale(1);
-  }
-}
-@keyframes fade-animation {
-  0% {
-    fill: "url(#gradient)" !important;
-  }
-  100% {
-    fill: "url(#gradient)" !important;
   }
 }
 @keyframes slideDown {
