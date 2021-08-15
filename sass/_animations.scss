@@ -47,7 +47,6 @@
   margin-left: 20px;
   overflow: hidden;
   height: auto;
-  transition: transform 0.5s ease-in-out;
 }
 
 .rotate {
@@ -83,7 +82,7 @@
   stop-color: $color-primary;
 }
 
-.i-heart {
+#i-heart {
   fill: transparent;
   stroke: rgb(70, 67, 67);
   stroke-width: 30;

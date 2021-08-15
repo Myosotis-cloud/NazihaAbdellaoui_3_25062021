@@ -11,6 +11,7 @@
   height: 50px;
   border: none;
   margin-top: 15px;
+  cursor: pointer;
   margin-bottom: 50px;
   transition: transform 1s, background-color 300ms 3s;
 }
@@ -871,7 +872,6 @@ body {
   margin-left: 20px;
   overflow: hidden;
   height: auto;
-  transition: transform 0.5s ease-in-out;
 }
 
 .rotate {
@@ -906,7 +906,7 @@ body {
   stop-color: #9356DC;
 }
 
-.i-heart {
+#i-heart {
   fill: transparent;
   stroke: #464343;
   stroke-width: 30;
@@ -915,23 +915,23 @@ body {
   width: 2em;
   justify-content: center;
 }
-.i-heart svg {
+#i-heart svg {
   overflow: visible;
 }
-.i-heart path {
+#i-heart path {
   fill-opacity: 0;
 }
-.i-heart .heart-background {
+#i-heart .heart-background {
   position: absolute;
   stroke: none;
   left: 0;
   right: 0;
   z-index: -1;
 }
-.i-heart .heart-main:hover path {
+#i-heart .heart-main:hover path {
   animation: stroke-animation 1s ease-in-out forwards;
 }
-.i-heart .heart-main:hover .heart-background path {
+#i-heart .heart-main:hover .heart-background path {
   animation: fade-animation 1s ease-in-out forwards;
 }
 
@@ -1155,7 +1155,7 @@ i.ustensils {
   padding-top: 5px;
 }
 
-/* ********************************PAGE MENU******************** */
+/* ********************************PAGE MENU*********************** */
 .enchante > .txt-card,
 .dish > .txt-card,
 .pudding > .txt-card {
