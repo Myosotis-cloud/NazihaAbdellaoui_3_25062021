@@ -80,10 +80,11 @@
 
 .title_main {
   font-family: "Roboto", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   flex-wrap: wrap;
   margin-top: 0;
+  padding-top: 20px;
   margin-bottom: 15px;
   width: 100%;
   color: #3f3c3c;
@@ -920,10 +921,6 @@ body {
   opacity: 1;
 }
 
-.i-heart .heart-background, .i-heart:hover, .i-heart .heart-main:hover {
-  transition: all 1s ease-in-out;
-}
-
 .i-heart .heart-background:hover {
   background: linear-gradient(#9356DC, #ff79da);
   -webkit-text-fill-color: transparent;
@@ -940,22 +937,18 @@ body {
     transform: scale(1);
   }
   30% {
-    background: linear-gradient #9356DC, #ff79da;
     opacity: 0.3;
     transform: scale(1.2);
   }
   60% {
-    background: linear-gradient #9356DC, #ff79da;
     opacity: 0.6;
     transform: scale(1);
   }
   80% {
-    background: linear-gradient #9356DC, #ff79da;
     opacity: 0.8;
     transform: scale(1.2);
   }
   100% {
-    background-color: linear-gradient #9356DC, #ff79da;
     opacity: 1;
     transform: scale(1);
   }
@@ -1221,7 +1214,7 @@ i.ustensils {
   border: none;
   align-items: center;
   margin-right: 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
