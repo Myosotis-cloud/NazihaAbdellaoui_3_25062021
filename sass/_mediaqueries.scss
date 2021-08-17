@@ -44,7 +44,7 @@ animation: none;
 
 .title_main{
 font-family: "Roboto", sans-serif;
-font-size: 1.5rem;
+font-size: 1.7rem;
 font-weight: 900;
 flex-wrap: wrap;
 margin-top: 0;
@@ -380,9 +380,10 @@ strong {
     .__card {
       border-radius: 20px;
       padding-bottom: 0;
-      height: 36vh;
+      //height: 10vh;
       &:hover{
       box-shadow: 1px 2px 5px 3px darkgray;
+      height: 30vh;
       }
       .title_nav {
         font-weight: 900;
@@ -530,7 +531,7 @@ strong {
   }
 
   h4 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     margin: 0;
     padding-left: 0;
@@ -644,7 +645,7 @@ strong {
       &:hover{
         box-shadow: 5px 6px 5px 3px #a9a9a9;
         border-radius: 20px;
-        //height: 36vh;
+        height: 30vh;
       }
       .title_nav {
         font-size: 1rem;
